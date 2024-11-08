@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>软件详情</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div id="content"></div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const fileName = urlParams.get('file'); // 假设传递的参数是文件名
+
+        fetch(`apps/${fileName}`)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('content').innerHTML = marked(data);
+            })
+            .catch(error => console.error('Error loading the file:', error));
+    </script>
+</body>
+</html>

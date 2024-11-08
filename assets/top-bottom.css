@@ -1,0 +1,104 @@
+/* 导航栏样式 */
+.navbar {
+    background-color: #f4f4f4; /* 导航栏背景颜色 */
+    padding: 10px 20px; /* 内边距 */
+    position: fixed; /* 固定位置 */
+    top: 0; /* 顶部对齐 */
+    left: 0; /* 左侧对齐 */
+    width: 100%; /* 宽度100% */
+    z-index: 1000; /* 确保在其他元素之上 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+}
+
+.navbar .nav-link {
+    color: #000; /* 字体颜色 */
+    font-weight: bold; /* 字体加粗 */
+    padding: 10px 15px; /* 内边距 */
+    text-decoration: none; /* 去掉链接下划线 */
+}
+
+.navbar .nav-link:hover,
+.navbar .dropdown-item:hover {
+    color: #00a0e9; /* 悬停时字体颜色 */
+}
+
+.dropdown-menu {
+    background-color: #00a0e9; /* 下拉菜单背景颜色 */
+    border: none; /* 去掉边框 */
+    border-radius: 16px; /* 圆角 */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+}
+
+/* 默认隐藏切换按钮 */
+.nav-toggle {
+    display: none; 
+}
+
+/* 默认水平排列并添加右边距 */
+.nav-item {
+    display: inline-block; /* 改为 inline-block 以支持设置宽度和高度 */
+    margin-right: 20px; /* 右边距 */
+    transition: background-color 0.5s ease; /* 添加过渡效果提升性能 */
+}
+
+
+
+/* 手机界面样式 */
+/* 媒体查询，用于响应式设计，在最大宽度为 768px 时应用样式 */
+@media (max-width: 768px) {
+    .nav-bar {
+        flex-direction: column; 
+    }
+
+    .nav-toggle {
+        display: block; 
+        cursor: pointer;
+        margin-bottom: 10px;
+    }
+
+    .nav-bar.active .nav-item {
+        display: block; 
+    }
+}
+
+
+/* 导航底部条样式 */
+.nav-bottom-bar {
+    height: 3px;
+    background-color: #00a0e9; 
+    width: 100%;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    height: 50px;
+    font-size: 14px;
+    line-height: 30px;
+    width: 100%;
+}
+
+/* 下拉菜单样式 */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+}
+
+/* 统一处理下拉菜单的显示隐藏 */
+.nav-item.dropdown:hover > .dropdown-menu,
+.nav-item.dropdown:focus > .dropdown-menu {
+    display: block;
+}
+
+/* 嵌套的下拉菜单样式 */
+.dropdown-menu.level2,
+.dropdown-menu.level3 {
+    position: absolute;
+}
+
+.dropdown-menu.level2 .dropdown-item.dropdown:hover > .dropdown-menu.level3,
+.dropdown-menu.level2 .dropdown-item.dropdown:focus > .dropdown-menu.level3 {
+    display: block;
+}

@@ -1,0 +1,109 @@
+/* 网站固定元素样式 */
+/* 公共圆角和强调色样式 */
+.yj, .container1, .container2, .software-card, .modal-content, .qr, .qr-content, .close {
+    border-radius: 16px; 
+}
+.qd, .link-style, .close {
+    color: #00a0e9;
+}
+
+/* 分隔符的样式 */
+.blue-bar {
+    width: 100%;
+    height: 4px;
+    background-color: #00a0e9;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* 弹窗样式 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 80%;
+    height: 80%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-content {
+    position: relative;
+    background-color: white;
+    margin: 10% auto; 
+    padding: 20px; 
+    border: 1px solid #888; 
+    width: 60%; 
+    height: 60%;
+    height: auto;
+    max-width: 450px;
+    max-height: 500px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* 二维码弹窗的样式 */
+.qr {
+    width: 100%;
+    height: 100%;
+}
+.qr-content {
+    margin: 15% auto; 
+    padding: 5px; 
+    border: 1px solid #888; 
+    width: 95%; 
+    height: 95%;
+    max-width: 200px; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* 弹窗标题的样式 */
+.close {
+    position: absolute; 
+    width: 30px; 
+    height: 30px; 
+    right: 10px; 
+    top: 10px; 
+    background: none; /* 背景透明 */
+    border: none; /* 无边框 */
+    cursor: pointer; /* 鼠标悬停时显示手型 */
+    padding: 0; /* 去掉内边距 */
+    transition: background-color 0.3s; /* 添加过渡效果 */
+}
+
+.close:hover,
+.close:focus {
+    background-color: #e0e0e0; /* 悬停时改变背景色 */
+}
+
+/* img 图标样式 */
+.close-icon {
+    width: 100%; /* 让图标填满按钮区域 */
+    height: auto; /* 维持比例 */
+}
+
+
+/* 字体样式 */
+.title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* 链接样式 */
+.link-style {
+    cursor: pointer; 
+}
+
+/* 图片样式 */
+.img-style {
+    max-width: 80%;
+    height: auto; /* 确保图片保持比例 */
+}
+
+/* 图标样式 */
+.icon {
+    width: 20px; 
+    height: 20px; 
+    cursor: pointer;
+}
