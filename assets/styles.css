@@ -6,7 +6,6 @@
 .qd, .link-style, .close {
     color: #00a0e9;
 }
-
 /* 分隔符的样式 */
 .blue-bar {
     width: 100%;
@@ -15,6 +14,9 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
+.background {
+    background-image: url(3.webp); 
+}
 /* 弹窗样式 */
 .modal {
     display: none;

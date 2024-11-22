@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="领创工作室">
+  <meta name="keywords" content="软件资源, 软件下载, 软件推荐">
+  <meta name="copyright" content="Copyright © 2024 领创工作室. All Rights Reserved.">
+  <title>登录_软件资源</title>
+  <link rel="stylesheet" href="assets/main.css"> 
+  <link rel="stylesheet" href="assets/top-bottom.css"> 
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/light-dark.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+  <style>
+    .card {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 40px; /* 加大内边距，以适应放大后的卡片 */
+        margin: 0; /* 移除外边距 */
+        width: 350px; /* 增大卡片宽度 */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: absolute; /* 改为绝对定位 */
+        right: 10%; /* 向右移动 */
+        top: 50%; /* 垂直方向居中 */
+        transform: translateY(-50%); /* 垂直方向修正偏移 */
+    }
+
+    .search-container {
+        width: 100%; /* 使输入框宽度充满卡片 */
+        padding: 10px; /* 增加内边距 */
+        font-size: 18px; /* 增加字体大小 */
+        margin-bottom: 15px; /* 增加输入框之间的间距 */
+        border: 1px solid #ccc; /* 添加边框 */
+        border-radius: 5px; /* 圆角边框 */
+    }
+
+    .details-button {
+        width: 100%; /* 使按钮宽度充满卡片 */
+        padding: 10px; /* 增加内边距 */
+        font-size: 18px; /* 增加字体大小 */
+        background-color: #007bff; /* 按钮背景色 */
+        color: white; /* 按钮字体颜色 */
+        border: none; /* 去掉边框 */
+        border-radius: 5px; /* 圆角边框 */
+        cursor: pointer; /* 鼠标指针样式 */
+    }
+
+    .details-button:hover {
+        background-color: #0056b3; /* 悬停时更改背景色 */
+    }
+
+    .background {
+        background-image: url(3.webp); /* 修正为正确的背景图片路径 */
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+        height: 100vh; /* 让 body 高度占满整个视口 */
+        margin: 0; /* 去掉默认 margin */
+        text-align: center;
+        background-size: cover; /* 确保背景覆盖整个区域 */
+    }
+</style>
+</head>
+<body class="background">
+    <div class="card">
+        <h4>账号登录</h4>
+        <form id="login">
+            <input id="basic_passport" name="username" placeholder="请输入用户名" aria-required="true" class="search-container" type="text">
+            <input id="basic_password" name="password" maxlength="4" placeholder="请输入密码" aria-required="true" type="password" class="search-container">
+            <button type="submit" class="details-button">登录</button>
+        </form>
+    </div>
+  <script>
+    document.getElementById('login').onsubmit = function(event) {
+        event.preventDefault(); // 阻止表单的默认提交行为
+
+        var username = document.getElementById('basic_passport').value.trim(); // 去除输入前后的空格
+        var password = document.getElementById('basic_password').value;
+
+        // 验证用户名和密码
+        if (username === '' || password === '') {
+            alert('用户名和密码不能为空。');
+            return;
+        }
+        
+        if (username === 'lican' && password === '1111') {
+            window.location.href = "D:/kaifa/appsweb/index.html"; 
+        } else {
+            alert('用户名或密码错误，请重试。');
+        }
+    };
+  </script>
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
