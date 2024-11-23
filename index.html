@@ -16,54 +16,54 @@
 </head>
 
 <body>
-    <div id="background">
+<div id="background">
     <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-      <span class="navbar-toggler-icon"></span>
-      </button>
-      <div id="logo" class="navbar-logo">
-      <span class="navbar-brand">软件资源</span>
-      </div>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-    <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">主页</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">关于</a></li>
-        <!-- PC和安卓部分减少重复 -->
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">PC</a>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <li><a class="dropdown-item" href="#">系统相关</a></li>
-                <li><a class="dropdown-item" href="#">编程调试</a></li>
-                <li><a class="dropdown-item" href="#">上传下载</a></li>
-                <li><a class="dropdown-item" href="#">办公学习</a></li>
-                <li><a class="dropdown-item" href="#">视频音频</a></li>
-                <li><a class="dropdown-item" href="#">安全防护</a></li>
-            </ul>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">安卓</a>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                <li><a class="dropdown-item" href="#">系统相关</a></li>
-                <li><a class="dropdown-item" href="#">编程调试</a></li>
-                <li><a class="dropdown-item" href="#">上传下载</a></li>
-                <li><a class="dropdown-item" href="#">办公学习</a></li>
-                <li><a class="dropdown-item" href="#">视频音频</a></li>
-                <li><a class="dropdown-item" href="#">安全防护</a></li>
-            </ul>
-        </li>
-        <div style="display: flex; align-items: center;">
-            <img id="avatar" src="img/icon/mr.svg" alt="头像" style="width: 30px; height: 30px; border-radius: 50%; margin-right: 10px; display: none;">
-            <span id="login-status" class="nav-item" style="margin-right: 10px; color: #666;"></span>
-            <div class="nav-item" style="display: flex; align-items: center; margin-right: 15px;">
-                <button id="login-button" class="button-long">登录账号</button>
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="logo" class="navbar-logo">
+                <span class="navbar-brand">软件资源</span>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">主页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">关于</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">PC</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a class="dropdown-item" href="#">系统相关</a></li>
+                            <li><a class="dropdown-item" href="#">编程调试</a></li>
+                            <li><a class="dropdown-item" href="#">上传下载</a></li>
+                            <li><a class="dropdown-item" href="#">办公学习</a></li>
+                            <li><a class="dropdown-item" href="#">视频音频</a></li>
+                            <li><a class="dropdown-item" href="#">安全防护</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">安卓</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <li><a class="dropdown-item" href="#">系统相关</a></li>
+                            <li><a class="dropdown-item" href="#">编程调试</a></li>
+                            <li><a class="dropdown-item" href="#">上传下载</a></li>
+                            <li><a class="dropdown-item" href="#">办公学习</a></li>
+                            <li><a class="dropdown-item" href="#">视频音频</a></li>
+                            <li><a class="dropdown-item" href="#">安全防护</a></li>
+                        </ul>
+                    </li>
+                    <div style="display: flex; align-items: center;">
+                        <img id="avatar" src="img/icon/mr.svg" alt="头像" style="width: 30px; height: 30px; border-radius: 50%; margin-right: 10px; display: none;">
+                        <span id="login-status" class="nav-item" style="margin-right: 10px; color: #666;"></span>
+                        <div class="nav-item" style="display: flex; align-items: center; margin-right: 15px;">
+                            <button id="login-button" class="button-long">登录账号</button>
+                        </div>
+                    </div>
+                </ul>
             </div>
         </div>
-    </ul>
+    </nav>
 </div>
 
-            </div>
-        </nav>
 <div class="main_background">
         <!-- 轮播图 -->
         <section class="container">
@@ -171,16 +171,15 @@
           </div>
           <div style="display: flex; gap: 10px; justify-content: center;">
               <button onclick="updateAccount()" class="button-long">保存修改</button>
+              <button onclick="logout()" class="button-long" style="background-color: red;">退出登录</button>
           </div>
       </div>
   </div>
 </div>
 
-      
-
-      </div>
-      </div>
-      </div>
+</div>
+</div>
+</div>
 <script src="js/login.js"></script>
 <script src="js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
