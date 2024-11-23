@@ -35,6 +35,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     width: 250px;
+    height: 300px;
     transition: transform 0.2s;
     overflow: hidden; /* 防止内容溢出 */
 }
@@ -78,8 +79,10 @@ p {
 }
 
 
-.more-button, .details-button {
-    margin-right: 10px;
+.button, .details-button {
+    width: 60px;
+    height: 40px;
+    margin-right: 15px;
     padding: 10px;
     font-size: 18px;
     border-radius: 5px;
@@ -88,9 +91,27 @@ p {
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    display: flex;        
+    align-items: center;   
+    justify-content: center;
+}
+.button-long {
+    width: 100px;
+    height: 40px;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    background-color: #00a0e9;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;        
+    align-items: center;   
+    justify-content: center;
 }
 
-.more-button:hover, .details-button:hover {
+.button:hover, .details-button:hover {
     background-color: #0056b3;
 }
 

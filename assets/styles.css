@@ -6,6 +6,19 @@
 .qd, .link-style, .close {
     color: #00a0e9;
 }
+@media (max-width: 800px) {
+    .modal-content {
+        width: 80%; /* 设置弹窗内容宽度为80% */
+        max-width: 400px; /* 设置最大宽度为400px */
+        height: auto; /* 高度根据内容自适应 */
+        margin: 10% auto; /* 上下留出一定的间隔 */
+    }
+
+}
+.main_background {
+    background-image: url(3.webp); /* 修正为正确的背景图片路径 */
+}
+
 /* 分隔符的样式 */
 .blue-bar {
     width: 100%;
@@ -14,9 +27,7 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
-.background {
-    background-image: url(3.webp); 
-}
+
 /* 弹窗样式 */
 .modal {
     display: none;
@@ -35,7 +46,7 @@
     margin: 10% auto; 
     padding: 20px; 
     border: 1px solid #888; 
-    width: 60%; 
+    width: 50%; 
     height: 60%;
     height: auto;
     max-width: 450px;
