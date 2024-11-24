@@ -24,7 +24,7 @@ body {
 }
 
 .container-litte {
-    height: 450px;
+    height: 440px;
     width: 90%;
     margin: 20px auto;
     padding: 20px;
@@ -161,7 +161,7 @@ p {
 
 /* 轮播图样式 */
 .carousel {
-    margin-top: 10px;
+    margin-top: 20px;
     position: relative;
     overflow: hidden;
     max-width: 100%;
