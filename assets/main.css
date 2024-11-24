@@ -139,16 +139,14 @@ p {
 
 /* 搜索框样式 */
 .search-container {
-    width: auto;
-    height: 80px;
-    border-radius: 8px;
-    background-color: #f4f4f4;
-    margin-right: 5px;
-    margin-left: 5px;
-    display: flex;
-    justify-content: space-between; /* 将子元素均匀分布 */
-    align-items: center; /* 垂直居中对齐 */
-    margin: 5px 0;
+    width: auto; /* 使输入框宽度充满卡片 */
+    height: 40px; /* 固定输入框高度 */
+    font-size: 14px; /* 增加字体大小 */
+    align-items: center;
+    border: 1px solid #ccc; /* 添加边框 */
+    border-radius: 8px; /* 圆角边框 */
+    margin-left: 10px; /* 左边距 */
+    margin-right: 10px; /* 右边距 */
 }
 
 .search-container input[type="text"] {
@@ -204,13 +202,3 @@ p {
 }
 
 /* 搜索框样式 */
-.search-container {
-    width: 280px; /* 使输入框宽度充满卡片 */
-    height: 40px; /* 固定输入框高度 */
-    font-size: 14px; /* 增加字体大小 */
-    align-items: center;
-    border: 1px solid #ccc; /* 添加边框 */
-    border-radius: 8px; /* 圆角边框 */
-    margin-left: 10px; /* 左边距 */
-    margin-right: 10px; /* 右边距 */
-}
