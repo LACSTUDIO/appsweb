@@ -2,8 +2,8 @@
     document.getElementById('login').onsubmit = function(event) {
         event.preventDefault(); // 阻止表单的默认提交行为
 
-        const username = document.getElementById('basic_passport').value.trim(); // 去除输入前后的空格
-        const password = document.getElementById('basic_password').value;
+        const username = document.getElementById('user').value.trim(); // 去除输入前后的空格
+        const password = document.getElementById('pwd').value;
 
         // 验证用户名和密码
         if (!username || !password) {

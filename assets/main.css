@@ -79,7 +79,7 @@ p {
 }
 
 
-.button, .details-button {
+.button, .big_button {
     width: 60px;
     height: 40px;
     margin-right: 15px;
@@ -111,7 +111,7 @@ p {
     justify-content: center;
 }
 
-.button:hover, .details-button:hover {
+.button:hover, .big_button:hover {
     background-color: #0056b3;
 }
 
