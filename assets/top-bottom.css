@@ -74,6 +74,14 @@
     padding: 10px; /* 内边距 */
 }
 
+.card-body {
+    background-color: #fff;
+    padding: 20px; /* 这个是内容与边框之间的距离（内边距） */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px 10px; /* 上下边距为10px，左右边距也设置为10px */
+}
+
 @media (max-width: 600px) {
     .nav-bar {
         flex-direction: column; 
