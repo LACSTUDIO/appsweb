@@ -7,6 +7,7 @@ body {
 }
 
 .recommend-title {
+    margin-left: 10px;
     margin-top: 15px;
     text-align: center; /* 标题居中 */
     font-size: 24px;    /* 标题字体大小 */
@@ -22,12 +23,32 @@ body {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+.container-litte {
+    height: 450px;
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
 .cards-container {
     padding: 20px;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+}
+
+.card-body {
+    background-color: #fff;
+    width: auto;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .software-card {
@@ -69,6 +90,7 @@ p {
 
 /* 推荐部分样式 */
 .recommend-container {
+    height: 50px;
     border-radius: 8px;
     background-color: #f4f4f4;
     margin-right: 5px;
@@ -179,4 +201,16 @@ p {
     cursor: pointer;
     padding: 10px;
     border-radius: 16px; 
+}
+
+/* 搜索框样式 */
+.search-container {
+    width: 280px; /* 使输入框宽度充满卡片 */
+    height: 40px; /* 固定输入框高度 */
+    font-size: 14px; /* 增加字体大小 */
+    align-items: center;
+    border: 1px solid #ccc; /* 添加边框 */
+    border-radius: 8px; /* 圆角边框 */
+    margin-left: 10px; /* 左边距 */
+    margin-right: 10px; /* 右边距 */
 }

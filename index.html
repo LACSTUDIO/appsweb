@@ -75,15 +75,12 @@
 <section class="container">
 <div class="row">
   <div class="col-md-6">
-    <div class="card-body">
+  <div class="container-litte">
       <!-- 搜索 -->
-      <div class="search-container">
-          <form action="https://www.bing.com/search" method="get" class="search-container">
-          <input type="text" id="searchInput" name="q" placeholder="搜索软件..." required>
+          <form action="https://www.bing.com/search" method="get" class="recommend-container">
+          <input class="search-container" type="text" id="searchInput" name="q" placeholder="搜索软件..." required>
           <button type="submit" class="button">搜索</button>
           </form>
-      </div>
-    </div>
   <!-- 轮播图 -->
     <div class="carousel">
       <div class="carousel-images" id="carouselImages">
@@ -96,16 +93,37 @@
       </div>
     </div>
   </div>
+  </div>
+<!-- 热门搜索 -->
   <div class="col-md-6">
-    <div class="card-body">
-      <h3 class="title">热搜榜</h3>
-      <div id="hot-search-list"> <!-- 热搜榜数据将被填充到这里 -->
-        <!-- 热搜数据将被动态插入 -->
-      </div>
+    <div class="container-litte">
+      <div class="recommend-container">
+        <h2 class="recommend-title text-center">热门搜索</h2>
+        <button class="button" onclick="showMore()">更多</button>
+    </div>
+<div id="hot-search-list">
+  <ol>
+    <li><a href="https://pan.quark.cn/s/c711025af63c" class="link-style" target="_blank" rel="noopener">WPS Office 2023 专业特别版</a></li>
+    <li><a href=# class="link-style" target="_blank" rel="noopener">热门搜索2</a></li>
+    <li><a href=# class="link-style" target="_blank" rel="noopener">热门搜索3</a></li>
+    <li><a href=# class="link-style" target="_blank" rel="noopener">热门搜索4</a></li>
+    <li><a href=# class="link-style" target="_blank" rel="noopener">热门搜索5</a></li>
+    <li><a href=# class="link-style" target="_blank" rel="noopener">热门搜索6</a></li>
+    <li><a href=# class="link-style" target="_blank" rel="noopener">热门搜索7</a></li>    
+    <li><a href=# class="link-style" target="_blank" rel="noopener">热门搜索8</a></li>
+    <li><a href=# class="link-style" target="_blank" rel="noopener">热门搜索9</a></li>
+    <li><a href=# class="link-style" target="_blank" rel="noopener">热门搜索10</a></li>
+    <li><a href=# class="link-style" target="_blank" rel="noopener">热门搜索11</a></li>
+    <li><a href=# class="link-style" target="_blank" rel="noopener">热门搜索12</a></li>
+    <li><a href=# class="link-style" target="_blank" rel="noopener">热门搜索13</a></li>
+  </ol>
+</div>
+
     </div>
   </div>
 </div>
 </section>   
+
 <!-- 推荐软件 -->
 <section class="container">
   <div class="recommend-container">
@@ -234,44 +252,6 @@
 </div>
 <script src="js/login.js"></script>
 <script src="js/script.js"></script>
-<script>
-  // 定义一个函数来获取热搜数据并更新DOM
-  function fetchHotSearchData() {
-    // 使用fetch API从服务器获取数据
-    fetch('https://xn--u2u38z.xn--5brr03o.top/all') // 替换为你的API URL
-      .then(response => {
-        // 确保响应是成功的
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json(); // 解析JSON数据
-      })
-      .then(data => {
-        // 处理数据，更新DOM
-        updateHotSearchList(data);
-      })
-      .catch(error => {
-        console.error('There has been a problem with your fetch operation:', error);
-      });
-  }
-
-  // 定义一个函数来更新热搜列表的DOM
-  function updateHotSearchList(data) {
-    const hotSearchList = document.getElementById('hot-search-list');
-    hotSearchList.innerHTML = ''; // 清空现有内容
-
-    // 假设data是一个数组，每个元素包含热搜项的信息
-    data.forEach(item => {
-      const div = document.createElement('div');
-      div.className = 'hot-search-item'; // 可以添加CSS类来样式化
-      div.textContent = item.name; // 假设每个热搜项有一个name属性
-      hotSearchList.appendChild(div);
-    });
-  }
-
-  // 页面加载完成后获取数据
-  document.addEventListener('DOMContentLoaded', fetchHotSearchData);
-</script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
