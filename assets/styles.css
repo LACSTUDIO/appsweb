@@ -133,4 +133,41 @@
     height: 20px; 
     cursor: pointer;
 }
+.checkbox-container {
+    display: flex;
+    align-items: center; /* 垂直居中对齐 */
+    margin: 10px 0; /* 增加上下间距 */
+    justify-content: flex-start; /* 水平左对齐 */
+}
 
+.checkbox {
+    appearance: none; /* 去掉默认样式 */
+    width: 20px; /* 设置宽度 */
+    height: 20px; /* 设置高度 */
+    border: 2px solid #007bff; /* 边框色 */
+    border-radius: 4px; /* 圆角 */
+    margin-right: 10px; /* 右侧间距 */
+    cursor: pointer; /* 鼠标悬浮为手形 */
+    outline: none; /* 去掉焦点样式 */
+    transition: background-color 0.3s; /* 背景色过渡 */
+}
+
+.checkbox:checked {
+    background-color: #007bff; /* 选中状态背景色 */
+    border: 2px solid #0056b3; /* 选中状态边框色 */
+}
+
+.checkbox:checked::after {
+    content: '✓'; /* 选中状态的标记 */
+    color: white; /* 标记颜色 */
+    font-size: 16px; /* 标记字体大小 */
+    position: relative;
+    left: 3px;
+    top: -2px;
+}
+
+.checkbox-label {
+    font-size: 16px; /* 标签字体大小 */
+    color: #333; /* 标签字体颜色 */
+    cursor: pointer; /* 鼠标悬浮为手形 */
+}

@@ -37,3 +37,36 @@
         loginStatusElement.innerText = isLoggedIn ? `欢迎, ${username}!` : '请登录。';
         document.body.appendChild(loginStatusElement); // 将登录状态显示在页面上
     }
+
+
+    $(document).ready(function() {
+        // 检查是否记住密码
+        if (localStorage.getItem('remember') === 'true') {
+            $('#user').val(localStorage.getItem('username'));
+            $('#pwd').val(localStorage.getItem('password'));
+            $('#remember').prop('checked', true);
+        }
+    
+        // 表单提交事件
+        $('#login').on('submit', function(event) {
+            event.preventDefault(); // 防止默认提交行为
+    
+            const username = $('#user').val();
+            const password = $('#pwd').val();
+            const rememberMe = $('#remember').is(':checked');
+    
+            // 登录逻辑，可以是 AJAX 请求验证用户名和密码
+            // ...
+            if (rememberMe) {
+                localStorage.setItem('username', username);
+                localStorage.setItem('password', password);
+                localStorage.setItem('remember', 'true');
+            } else {
+                localStorage.removeItem('username');
+                localStorage.removeItem('password');
+                localStorage.setItem('remember', 'false');
+            }
+    
+            // 提交表单或其他操作
+        });
+    });

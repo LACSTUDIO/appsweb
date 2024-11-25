@@ -5,7 +5,19 @@ body {
     padding: 0;
     background-color: #f4f4f4;
 }
+@media (max-width: 800px) {
+    .search-container_big {
+        width: auto; /* 使输入框宽度充满卡片 */
+        height: 40px; /* 固定输入框高度 */
+        font-size: 14px; /* 增加字体大小 */
+        align-items: center;
+        border: 1px solid #ccc; /* 添加边框 */
+        border-radius: 8px; /* 圆角边框 */
+        margin-left: 10px;
+        margin-right: 20px;
+    }
 
+}
 .recommend-title {
     margin-left: 10px;
     margin-top: 15px;
@@ -149,8 +161,6 @@ p {
     align-items: center;
     border: 1px solid #ccc; /* 添加边框 */
     border-radius: 8px; /* 圆角边框 */
-    margin-left: 10px; /* 左边距 */
-    margin-right: 10px; /* 右边距 */
 }
 
 .search-container input[type="text"] {
@@ -162,7 +172,26 @@ p {
     border-radius: 5px; 
     flex-grow: 1;
 }
+.search-container_big {
+    width: 280px; /* 使输入框宽度充满卡片 */
+    height: 40px; /* 固定输入框高度 */
+    font-size: 14px; /* 增加字体大小 */
+    align-items: center;
+    border: 1px solid #ccc; /* 添加边框 */
+    border-radius: 8px; /* 圆角边框 */
+    margin-left: 10px;
+    margin-right: 20px;
+}
 
+.search-container_big input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    margin-left: 10px;
+    margin-right: 5px;
+    border-radius: 5px; 
+    flex-grow: 1;
+}
 /* 轮播图样式 */
 .carousel {
     margin-top: 20px;
