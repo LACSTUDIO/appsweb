@@ -27,6 +27,20 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
+/* 提示信息的样式 */
+.message {
+    position: fixed;
+    top: 10px; /* 设置垂直位置为10px */
+    left: 50%; /* 水平居中 */
+    transform: translateX(-50%); /* 平移，使其准确居中 */
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+
 
 /* 弹窗样式 */
 .modal {
@@ -119,3 +133,4 @@
     height: 20px; 
     cursor: pointer;
 }
+

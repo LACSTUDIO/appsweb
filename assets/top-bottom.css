@@ -10,7 +10,14 @@
     z-index: 1000; /* 确保在其他元素之上 */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
 }
-
+.theme-selector {
+    margin-left: 20px;
+}
+.form-select {
+    width: 60px;
+    height: 50px;
+    border-radius: 10px;
+}
 .navbar-logo {
     height: 50px;
     text-align: center;

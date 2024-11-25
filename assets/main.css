@@ -12,7 +12,11 @@ body {
     text-align: center; /* 标题居中 */
     font-size: 24px;    /* 标题字体大小 */
 }
-
+.hot-search-item {
+    margin-bottom: 10px;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+  }
 /* 主页大卡片样式 */
 .container {
     width: 80%;
