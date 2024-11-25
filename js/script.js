@@ -171,15 +171,16 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // 初始化主题，加载当前主题但不显示提示
-    const savedTheme = localStorage.getItem('theme') || 'light'; // 默认为亮色主题
+    // 初始化主题，加载当前主题
+    const savedTheme = localStorage.getItem('theme') || 'light';
     document.body.classList.add(savedTheme === 'dark' ? 'bg-dark' : 'bg-light');
+    toggleNavbarTheme(savedTheme); // 初始化navbar样式
 
     // 添加主题切换按钮的点击事件
-    const themeToggleBtn = document.getElementById('theme-toggle'); // 假设有一个按钮的 ID 是 theme-toggle
+    const themeToggleBtn = document.getElementById('theme-toggle');
     themeToggleBtn.addEventListener('click', () => {
         const currentTheme = localStorage.getItem('theme') || 'light';
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark'; // 切换主题
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark'; 
         toggleTheme(newTheme);
     });
 });
@@ -190,33 +191,40 @@ function toggleTheme(theme) {
     const message = document.createElement('div');
     message.className = 'message';
 
-    // 更新主题
-    const isDark = theme === 'dark';
-    body.classList.toggle('bg-dark', isDark);
-    body.classList.toggle('bg-light', !isDark);
+    body.classList.toggle('bg-dark', theme === 'dark');
+    body.classList.toggle('bg-light', theme === 'light');
+    
+    toggleNavbarTheme(theme); // 切换navbar样式
 
     document.querySelectorAll('.title').forEach(title => {
-        title.style.color = isDark ? 'white' : ''; // 修改标题颜色
+        title.classList.toggle('dark', theme === 'dark');
     });
 
     document.querySelectorAll('.container-litte, .container').forEach(container => {
-        container.style.backgroundColor = isDark ? 'rgba(51, 51, 51, 0.9)' : '';
-        container.style.boxShadow = isDark ? '0 4px 10px rgba(255, 255, 255, 0.5)' : '';
+        container.classList.toggle('dark', theme === 'dark');
     });
 
     // 设置下拉框中的选项文本
     document.querySelectorAll('select').forEach(select => {
-        const optionText = isDark ? '深色' : '浅色';
-        select.options[0].text = optionText;
+        select.options[0].text = theme === 'dark' ? '深色' : '浅色';
     });
 
-    // 仅在切换主题时显示提示
-    message.innerText = isDark ? '已进入深色主题' : '已进入浅色主题';
+    message.innerText = theme === 'dark' ? '已进入深色主题' : '已进入浅色主题';
     body.appendChild(message);
     setTimeout(() => body.removeChild(message), 1000);
 
     localStorage.setItem('theme', theme);
 }
+
+// 切换navbar的主题样式
+function toggleNavbarTheme(theme) {
+    const navbar = document.querySelector('.navbar'); // 获取navbar元素
+    if (navbar) {
+        navbar.classList.toggle('navbar-dark', theme === 'dark');
+        navbar.classList.toggle('navbar-light', theme === 'light');
+    }
+}
+
 
 
 
