@@ -57,7 +57,7 @@ body {
 
 .bg-dark {
     background-color: #333333; /* 深色背景 */
-    color: #ffffff; /* 文字颜色 */
+    color: #000000; /* 文字颜色 */
 }
 
 .title {
@@ -65,7 +65,7 @@ body {
 }
 
 .title.dark {
-    color: #ffffff; /* 深色主题标题颜色 */
+    color: #000000; /* 深色主题标题颜色 */
 }
 
 .container-litte {
