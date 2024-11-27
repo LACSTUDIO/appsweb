@@ -225,8 +225,20 @@ function toggleNavbarTheme(theme) {
     }
 }
 
+function performSearch() {
+    const queryInput = document.getElementById('searchQuery');
+    const query = queryInput.value.trim();
 
+    // 检查输入是否为空
+    if (!query) {
+        alert("请输入搜索内容"); 
+        return false;
+    }
 
+    const searchUrl = `https://cn.bing.com/search?q=${encodeURIComponent(query)}`;
+    window.location.href = searchUrl;
+    return false;
+}
 
 
 
