@@ -226,7 +226,7 @@ function toggleNavbarTheme(theme) {
 }
 
 function performSearch() {
-    const queryInput = document.getElementById('searchQuery');
+    const queryInput = document.getElementById('search');
     const query = queryInput.value.trim();
 
     // 检查输入是否为空

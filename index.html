@@ -56,7 +56,7 @@
                             <li><a class="dropdown-item" href="#">安全防护</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="#">最新</a></li>
+                    <li class="nav-item"><a class="nav-link" href="404.html">最新</a></li>
                     <div style="display: flex; align-items: center;">
                         <img id="avatar" src="img/icon/mr.svg" alt="头像" style="width: 30px; height: 30px; border-radius: 50%; margin-right: 10px; display: none;">
                         <span id="login-status" class="nav-item" style="margin-right: 10px; color: #666;"></span>
@@ -77,7 +77,7 @@
   <div class="container-litte">
 <!-- 搜索 -->
 <form id="searchForm" class="recommend-container" onsubmit="return performSearch();">
-    <input id="searchQuery" type="text" class="search-container_big" placeholder="搜索软件..." required>
+    <input id="search" type="text" class="search-container_big" placeholder="搜索软件..." required>
     <button type="submit" class="button">搜索</button>
 </form>
 
@@ -241,7 +241,7 @@
               <input type="password" id="passwordInput" title="请输入密码" placeholder="密码" required>
           </div>
           <div style="display: flex; gap: 10px; justify-content: center;">
-              <button onclick="updateAccount()" class="button-long">保存修改</button>
+              <button onclick="updateAccount()" class="button-long" id="save">保存修改</button>
               <button onclick="logout()" class="button-long" style="background-color: red;">退出登录</button>
           </div>
       </div>

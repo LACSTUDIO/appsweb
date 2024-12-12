@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="领创工作室">
+    <meta name="keywords" content="软件资源, 软件下载, 软件推荐">
+    <meta name="copyright" content="Copyright © 2024 领创工作室. All Rights Reserved.">
+    <title>软件资源(测试)</title>
+    <link rel="stylesheet" href="assets/main.css">
+    <link rel="stylesheet" href="assets/top-bottom.css">
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/light-dark.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+<body>
+<div>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+<div id="logo" class="navbar-logo">
+    <span class="navbar-brand">软件资源(测试)</span>
+</div>
+<div class="theme-selector">
+<select class="form-select" id="themeSelector" onchange="toggleTheme(this.value)">
+    <option value="light" selected="selected">浅色</option>
+    <option value="dark">深色</option>
+</select>
+
+</div>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">主页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">关于</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">PC</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a class="dropdown-item" href="#">系统相关</a></li>
+                            <li><a class="dropdown-item" href="#">编程调试</a></li>
+                            <li><a class="dropdown-item" href="#">上传下载</a></li>
+                            <li><a class="dropdown-item" href="#">办公学习</a></li>
+                            <li><a class="dropdown-item" href="#">视频音频</a></li>
+                            <li><a class="dropdown-item" href="#">安全防护</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">安卓</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <li><a class="dropdown-item" href="#">系统相关</a></li>
+                            <li><a class="dropdown-item" href="#">编程调试</a></li>
+                            <li><a class="dropdown-item" href="#">上传下载</a></li>
+                            <li><a class="dropdown-item" href="#">办公学习</a></li>
+                            <li><a class="dropdown-item" href="#">视频音频</a></li>
+                            <li><a class="dropdown-item" href="#">安全防护</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="404.html">最新</a></li>
+                    <div style="display: flex; align-items: center;">
+                        <img id="avatar" src="img/icon/mr.svg" alt="头像" style="width: 30px; height: 30px; border-radius: 50%; margin-right: 10px; display: none;">
+                        <span id="login-status" class="nav-item" style="margin-right: 10px; color: #666;"></span>
+                        <div class="nav-item" style="display: flex; align-items: center; margin-right: 15px;">
+                            <button id="login-button" class="button-long">登录账号</button>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div class="container" style="text-align: center; padding: 20px;">
+    <div style="margin: 20px 0;">
+        <a href="index.html" class="button-long" style="text-decoration: none;">返回首页</a>
+    </div>
+    <img src="img/icon/施工.svg" alt="施工图标" style="width: 150px; height: auto; margin-bottom: 20px;">
+    <p style="font-size: 18px; color: #333;">该页面正在建设中，敬请期待！</p>
+    <p>我们正在努力为您提供更好的服务和内容，敬请关注我们的最新动态！</p>
+</div>
+
+
+
+<!-- 底部 -->
+<footer class="footer">
+    <p>© 2024 领创工作室 友链:
+        <a href="https://www.xn--5brr03o.top/" class="link-style" target="_blank" rel="noopener">领创工作室</a>
+        <a href="https://xn--9krq6q.xn--5brr03o.top/" class="link-style" target="_blank" rel="noopener">领创博客</a>
+        <a href="javascript:void(0);" onclick="showDisclaimer()" style="color: #00a0e9;">免责声明</a>
+    <svg
+    class="icon"
+    viewBox="0 0 1024 1024"
+    xmlns="http://www.w3.org/2000/svg"
+    width="200"
+    height="200"
+    onclick="window.open('https://github.com/LACSTUDIO/appsweb', '_blank')"
+    role="img"
+    aria-label="本站GitHub仓库"
+  >
+    <title>GitHub Link</title>
+    <path
+        d="M20.48 503.72608c0 214.4256 137.4208 396.73856 328.94976 463.6672
+        25.8048 6.5536 21.87264-11.8784 21.87264-24.33024v-85.07392c-148.93056 17.44896
+        -154.86976-81.1008-164.94592-97.52576-20.23424-34.52928-67.91168-43.33568-53.69856-59.76064
+        33.91488-17.44896 68.48512 4.42368 108.46208 63.61088 28.95872 42.88512 85.44256 35.6352
+        114.15552 28.4672a138.8544 138.8544 0 0 1 38.0928-66.7648c-154.25536-27.60704
+        -218.60352-121.77408-218.60352-233.79968 0-54.31296 17.94048-104.2432 53.0432-144.54784
+        -22.36416-66.43712 2.08896-123.24864 5.3248-131.6864 63.81568-5.7344 130.00704 45.6704
+        135.168 49.68448 36.2496-9.78944 77.57824-14.9504 123.82208-14.9504 46.4896 0 88.064
+        5.3248 124.5184 15.23712 12.288-9.4208 73.80992-53.53472 133.12-48.128 3.15392 8.43776
+        27.0336 63.93856 6.02112 129.4336 35.59424 40.38656 53.69856 90.76736 53.69856 145.24416
+        0 112.18944-64.7168 206.4384-219.42272 233.71776a140.0832 140.0832 0 0 1 41.7792 99.9424
+        v123.4944c0.86016 9.87136 0 19.6608 16.50688 19.6608 194.31424-65.49504 334.2336-249.15968
+        334.2336-465.5104C1002.57792 232.48896 782.66368 12.77952 511.5904 12.77952 240.18944
+        12.65664 20.48 232.40704 20.48 503.72608z"
+        fill="#000000"
+        opacity=".65"
+    ></path>
+  </svg>
+  
+  </p>
+  </footer>
+          <!-- 免责声明弹窗 -->
+          <div id="disclaimer-modal" class="modal">
+              <div class="modal-content">
+                  <button class="close" onclick="closeDisclaimer()">
+                      <img src="img/icon/close.svg" alt="关闭" class="close-icon">
+                  </button>
+                  <h3 class="title">免责声明</h3>
+                  <hr>
+                  <h5>本站为个人博客</h5>
+                  <p>博客所发布的一切信息及软件的文章仅限用于学习和研究目的；不得将上述内容用于商业或者非法用途，否则，一切后果请用户自负。</p>
+                  <h5>本站信息来自网络</h5>
+                  <p>版权争议与本站无关，您必须在下载后的24个小时之内，从您的电脑中彻底删除上述内容。访问和下载本站内容，说明您已同意上述条款。</p>
+                  <h5>本站为非盈利性站点</h5>
+                  <p>本站不贩卖软件，所有内容不作为商业行为。</p>
+              </div>
+          </div>
+  
+  <!-- 账号管理弹窗 -->
+  <div id="account-modal" class="modal">
+    <div class="modal-content">
+        <button class="close" onclick="closeAccountModal()">
+            <img src="img/icon/close.svg" alt="关闭" class="close-icon">
+        </button>
+        <h3 class="title">账号管理</h3>
+        <hr>
+        <div style="text-align: center;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span>头像：</span>
+                <button onclick="document.getElementById('avatarInput').click();" class="button-long">更改头像</button>
+                <input type="file" id="avatarInput" accept="image/*" title="更改头像" style="display: none;" onchange="updateFileName()">
+                <input type="text" id="fileNameInput" title="头像文件名" placeholder="头像文件名" readonly>
+              </div>
+            <div style="margin: 10px 0;">
+                <input type="text" id="usernameInput" title="请输入用户名" placeholder="用户名" required>
+            </div>
+            <div style="margin: 5px 0;">
+                <input type="password" id="passwordInput" title="请输入密码" placeholder="密码" required>
+            </div>
+            <div style="display: flex; gap: 10px; justify-content: center;">
+                <button onclick="updateAccount()" class="button-long" id="save">保存修改</button>
+                <button onclick="logout()" class="button-long" style="background-color: red;">退出登录</button>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+  </div>
+  </div>
+  </div>
+  <script src="js/login.js"></script>
+  <script src="js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+  
+  </html>
+  

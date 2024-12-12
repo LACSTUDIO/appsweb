@@ -76,6 +76,14 @@ function updateAccount() {
     }
 }
 
+// 监听按键事件，检测回车键
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        updateAccount(); // 调用更新账户信息的函数
+    }
+});
+
+
 function logout() {
     localStorage.removeItem('username');
     localStorage.removeItem('avatarUrl');
