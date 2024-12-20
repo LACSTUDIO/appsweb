@@ -148,7 +148,9 @@ p {
     align-items: center;   
     justify-content: center;
 }
-
+.button-long:hover {
+    background-color: #0056b3;
+}
 .button:hover, .big_button:hover {
     background-color: #0056b3;
 }

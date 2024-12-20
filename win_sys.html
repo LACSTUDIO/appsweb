@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="领创工作室">
+    <meta name="keywords" content="软件资源, 软件下载, 软件推荐">
+    <meta name="copyright" content="Copyright © 2024 领创工作室. All Rights Reserved.">
+    <title>软件资源(测试)</title>
+    <link rel="stylesheet" href="assets/main.css">
+    <link rel="stylesheet" href="assets/top-bottom.css">
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/light-dark.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="logo" class="navbar-logo">
+                <span class="navbar-brand">软件资源(测试)</span>
+            </div>
+            <div class="theme-selector">
+                <select class="form-select" id="themeSelector" onchange="toggleTheme(this.value)">
+                    <option value="light" selected="selected">浅色</option>
+                    <option value="dark">深色</option>
+                </select>
+
+            </div>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">主页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">关于</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">PC</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a class="dropdown-item" href="#">系统相关</a></li>
+                            <li><a class="dropdown-item" href="#">编程调试</a></li>
+                            <li><a class="dropdown-item" href="#">上传下载</a></li>
+                            <li><a class="dropdown-item" href="#">办公学习</a></li>
+                            <li><a class="dropdown-item" href="#">视频音频</a></li>
+                            <li><a class="dropdown-item" href="#">安全防护</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">安卓</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <li><a class="dropdown-item" href="#">系统相关</a></li>
+                            <li><a class="dropdown-item" href="#">编程调试</a></li>
+                            <li><a class="dropdown-item" href="#">上传下载</a></li>
+                            <li><a class="dropdown-item" href="#">办公学习</a></li>
+                            <li><a class="dropdown-item" href="#">视频音频</a></li>
+                            <li><a class="dropdown-item" href="#">安全防护</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="404.html">最新</a></li>
+                    <div style="display: flex; align-items: center;">
+                        <img id="avatar" src="img/icon/mr.svg" alt="头像" style="width: 30px; height: 30px; border-radius: 50%; margin-right: 10px; display: none;">
+                        <span id="login-status" class="nav-item" style="margin-right: 10px; color: #666;"></span>
+                        <div class="nav-item" style="display: flex; align-items: center; margin-right: 15px;">
+                            <button id="login-button" class="button-long">登录账号</button>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<div class="container mt-4">
+    <h1>PC系统相关软件列表</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <h3>系统清理</h3>
+            <ul>
+                <li><a href="#">CCleaner - 系统清理工具</a></li>
+                <li><a href="#">Wise Disk Cleaner - 磁盘清理工具</a></li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <h3>系统优化</h3>
+            <ul>
+                <li><a href="#">Advanced SystemCare - 系统优化工具</a></li>
+                <li><a href="#">Glary Utilities - 系统管理工具</a></li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <h3>驱动更新</h3>
+            <ul>
+                <li><a href="#">Driver Booster - 驱动更新工具</a></li>
+                <li><a href="#">Snappy Driver Installer - 驱动安装工具</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <h3>系统备份</h3>
+            <ul>
+                <li><a href="#">AOMEI Backupper - 系统备份工具</a></li>
+                <li><a href="#">Macrium Reflect - 磁盘映像工具</a></li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <h3>虚拟机</h3>
+            <ul>
+                <li><a href="#">VMware Workstation - 虚拟机软件</a></li>
+                <li><a href="#">Oracle VirtualBox - 开源虚拟机</a></li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <h3>系统监控</h3>
+            <ul>
+                <li><a href="#">HWMonitor - 硬件监控工具</a></li>
+                <li><a href="#">CPU-Z - CPU信息工具</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <h3>网络工具</h3>
+            <ul>
+                <li><a href="#">Wireshark - 网络协议分析工具</a></li>
+                <li><a href="#">Putty - SSH和Telnet客户端</a></li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <h3>文件管理</h3>
+            <ul>
+                <li><a href="#">WinRAR - 文件压缩工具</a></li>
+                <li><a href="#">7-Zip - 开源文件压缩工具</a></li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <h3>安全防护</h3>
+            <ul>
+                <li><a href="#">Malwarebytes - 杀毒软件</a></li>
+                <li><a href="#">Norton Security - 综合安全解决方案</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <h3>开发工具</h3>
+            <ul>
+                <li><a href="#">Visual Studio Code - 代码编辑器</a></li>
+                <li><a href="#">Postman - API调试工具</a></li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <h3>媒体工具</h3>
+            <ul>
+                <li><a href="#">VLC Media Player - 多媒体播放器</a></li>
+                <li><a href="#">Shotcut - 视频编辑软件</a></li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <h3>备份与恢复</h3>
+            <ul>
+                <li><a href="#">EaseUS Todo Backup - 备份软件</a></li>
+                <li><a href="#">Recuva - 数据恢复工具</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

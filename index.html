@@ -78,7 +78,7 @@
 <!-- 搜索 -->
 <form id="searchForm" class="recommend-container" onsubmit="return performSearch();">
     <input id="search" type="text" class="search-container_big" placeholder="搜索软件..." required>
-    <button type="submit" class="button">搜索</button>
+    <button id="searchBtn" type="submit" class="button">搜索</button>
 </form>
 
     </form>
@@ -110,7 +110,7 @@
     <li><a href=# class="link-style" target="_blank" rel="noopener">热门搜索4</a></li>
     <li><a href=# class="link-style" target="_blank" rel="noopener">热门搜索5</a></li>
     <li><a href=# class="link-style" target="_blank" rel="noopener">热门搜索6</a></li>
-    <li><a href=# class="link-style" target="_blank" rel="noopener">热门搜索7</a></li>  
+    <li><a href=# class="link-style" target="_blank" rel="noopener">热门搜索7</a></li>
     <li><a href=# class="link-style" target="_blank" rel="noopener">热门搜索8</a></li>
     <li><a href=# class="link-style" target="_blank" rel="noopener">热门搜索9</a></li>
     <li><a href=# class="link-style" target="_blank" rel="noopener">热门搜索10</a></li>
@@ -123,7 +123,7 @@
     </div>
   </div>
 </div>
-</section>   
+</section>
 
 <!-- 推荐软件 -->
 <section class="container">
@@ -132,10 +132,10 @@
       <button class="button" onclick="showMore()">更多</button>
   </div>
   <div class="cards-container" style="display: flex; flex-wrap: wrap; gap: 20px;">
-      <div class="software-card">
-          <div class="card-image" style="background-image: url('img/默认图片.png');"></div>
+      <div class="software-card" onclick="window.location.href='details.html';" style="cursor: pointer;">
+          <div class="card-image" style="background-image: url('img/wps.png');"></div>
           <div class="info">
-              <h3>软件名称1</h3>
+              <h5>WPS Office 2023 专业特别版</h5>
               <p>软件简介...</p>
           </div>
       </div>
