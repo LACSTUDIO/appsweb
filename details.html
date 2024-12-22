@@ -29,10 +29,11 @@
         padding-left: 20px;
     }
     h2 {
-        margin-top: 10px;
+        margin-top: 20px;
         color: #333;
         border-bottom: 2px solid #007BFF;
         padding-bottom: 10px;
+        text-align: center;
     }
     h3 {
         color: #007BFF;
@@ -139,7 +140,10 @@
         <img onclick="scrollToBottom()" src="img/icon/置底.svg" alt="拉到底" style="width: 50px; height: 50px; margin-right: 8px;">
         </button>
              <div class="entry-content">
-                <h2>软件简介</h2>
+                 <h2>软件截图</h2>
+                 <p>WPS Office 2023 v12.8.2.18205 专业特别版</p><p><img src="img/screenshot/WPS.png" alt="WPS Office 截图" width="100%" /></p>
+
+                 <h2>软件简介</h2>
                 <p class="feature-list">根据官方UI风格优化安装程序，界面更简洁、操作更直观，支持一键快速安装。</p>
 
                 <h3>（1）可选优化设置</h3>
@@ -189,11 +193,31 @@
                     <li>安装过程自动禁用WPS办公助手和其资源管理器右键菜单。</li>
                     <li>安装过程自动删除升级组件并清除检查升级的计划任务项。</li>
                 </ul>
+                 <h2>软件下载</h2>
+                 <div class="container-middle">
+                     <div class="container-mini">
+                         <p>夸克网盘</p>
+                         <button id="DownloadBtn_QuarkPan" type="button" class="button-long" onclick="downloadFile('夸克网盘', 'https://www.wps.cn/product/wps-office-2023-special-edition-v12-8-2-18205')">立即下载</button>
+                     </div>
+                     <div class="container-mini">
+                         <p>百度网盘</p>
+                         <button id="DownloadBtn_BaiduPan" type="button" class="button-long" onclick="downloadFile('百度网盘', 'https://www.wps.cn/product/wps-office-2023-special-edition-v12-8-2-18205')">立即下载</button>
+                     </div>
+                     <div class="container-mini">
+                         <p>123网盘</p>
+                         <button id="DownloadBtn_123Pan" type="button" class="button-long" onclick="downloadFile('123网盘', 'https://www.wps.cn/product/wps-office-2023-special-edition-v12-8-2-18205')">立即下载</button>
+                     </div>
+                     <div class="container-mini">
+                         <p>迅雷网盘</p>
+                         <button id="DownloadBtn_XunleiPan" type="button" class="button-long" onclick="downloadFile('迅雷网盘', 'https://www.wps.cn/product/wps-office-2023-special-edition-v12-8-2-18205')">立即下载</button>
+                     </div>
+                     <div class="container-mini">
+                         <p>UC网盘</p>
+                         <button id="DownloadBtn_UCPan" type="button" class="button-long" onclick="downloadFile('UC网盘', 'https://www.wps.cn/product/wps-office-2023-special-edition-v12-8-2-18205')">立即下载</button>
+                     </div>
+                 </div>
+         </div>
 
-                <h2>软件截图</h2>
-                <p>WPS Office 2023 v12.8.2.18205 专业特别版</p><p><img src="screenshot.png" alt="WPS Office 截图" width="100%" /></p>
-                <button id="searchBtn" type="submit" class="button-long" onclick="window.location.href='https://www.wps.cn/product/wps-office-2023-special-edition-v12-8-2-18205';">立即下载</button>
-            </div>
         </article>
     </main>
 </div>
@@ -285,13 +309,25 @@
     </div>
 </div>
 
-</div>
-</div>
-</div>
 <script>
     function scrollToBottom() {
-        window.scrollTo(0, document.body.scrollHeight);
-    }
+    window.scrollTo(0, document.body.scrollHeight);
+    shakeLoginBtn();
+}
+
+function shakeLoginBtn() {
+    const button = document.getElementById('DownloadBtn');
+    let shakeCount = 0;
+    const shakeInterval = setInterval(() => {
+        button.style.transform = shakeCount % 2 === 0 ? 'translateX(5px)' : 'translateX(-5px)';
+        shakeCount++;
+        if (shakeCount > 10) {
+            clearInterval(shakeInterval);
+            button.style.transform = 'translateX(0)';
+        }
+    }, 100);
+}
+
 </script>
 <script src="js/login.js"></script>
 <script src="js/script.js"></script>

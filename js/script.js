@@ -241,4 +241,134 @@ function performSearch() {
 }
 
 
+function updateDisplayMode() {
+    const displayMode = document.getElementById('displayMode');
+    if (window.innerWidth > 768) { // 假设768px为大屏幕的界限
+        displayMode.innerText = '网站显示模式: 电脑模式';
+    } else {
+        displayMode.innerText = '网站显示模式: 手机模式';
+    }
+}
+
+// 页面加载时和窗口大小调整时更新显示模式
+window.onload = updateDisplayMode;
+window.onresize = updateDisplayMode;
+
+
+    // 获取操作系统信息的函数
+function getOSInfo() {
+    let userAgent = window.navigator.userAgent;
+    let os = "未知操作系统";
+
+    if (userAgent.indexOf("Win") !== -1) os = "Windows";
+    else if (userAgent.indexOf("Mac") !== -1) os = "MacOS";
+    else if (userAgent.indexOf("X11") !== -1 || userAgent.indexOf("Linux") !== -1) os = "Linux";
+    else if (userAgent.indexOf("Android") !== -1) os = "Android";
+    else if (userAgent.indexOf("iPhone") !== -1 || userAgent.indexOf("iPad") !== -1) os = "iOS";
+    else if (userAgent.indexOf("iPod") !== -1) os = "iPod";
+    else if (userAgent.indexOf("BlackBerry") !== -1) os = "BlackBerry";
+    else if (userAgent.indexOf("Opera Mini") !== -1) os = "Opera Mini";
+    else if (userAgent.indexOf("IEMobile") !== -1) os = "IEMobile";
+    else if (userAgent.indexOf("WPDesktop") !== -1) os = "Windows Phone";
+    else if (userAgent.indexOf("Chrome") !== -1) os = "Chrome OS";
+    else if (userAgent.indexOf("Firefox") !== -1) os = "Firefox";
+    else if (userAgent.indexOf("Safari") !== -1) os = "Safari";
+    else if (userAgent.indexOf("UCBrowser") !== -1) os = "UC Browser";
+    else if (userAgent.indexOf("QQBrowser") !== -1) os = "QQ Browser";
+    else if (userAgent.indexOf("Baidu") !== -1) os = "Baidu Browser";
+    else if (userAgent.indexOf("Chrome") !== -1) os = "Chrome OS";
+    else if (userAgent.indexOf("Safari") !== -1) os = "Safari";
+    else if (userAgent.indexOf("Opera") !== -1) os = "Opera";
+
+
+    return os;
+}
+
+// 更新操作系统信息到页面
+document.addEventListener("DOMContentLoaded", function() {
+    const osVersionElement = document.getElementById("os_version");
+    osVersionElement.innerHTML = "操作系统: " + getOSInfo();
+});
+
+
+const startTime = new Date('2024-11-22T00:00:00'); // 请根据实际情况修改
+function updateTime() {
+    const currentTime = new Date();
+    const elapsedTime = Math.floor((currentTime - startTime) / 1000); // 计算已运行的秒数
+
+    // 显示格式化转换
+    const days = Math.floor(elapsedTime / (24 * 60 * 60));
+    const hours = Math.floor((elapsedTime % (24 * 60 * 60)) / 3600);
+    const minutes = Math.floor((elapsedTime % 3600) / 60);
+    const seconds = elapsedTime % 60;
+
+    // 更新页面元素
+    document.getElementById('time').innerText = `网站运行时间: ${days} 天 ${hours} 小时 ${minutes} 分 ${seconds} 秒`;
+}
+
+// 每秒更新一次
+setInterval(updateTime, 1000);
+
+
+const owner = 'LACSTUDIO'; // 替换为仓库所有者的用户名
+const repo = 'appsweb'; // 替换为你的仓库名
+
+
+fetch(`https://api.github.com/repos/${owner}/${repo}/commits`)
+    .then(response => {
+        console.log('响应状态:', response.status);
+        if (!response.ok) {
+            throw new Error('网络响应不正常');
+        }
+        return response.json();
+    })
+    .then(commits => {
+        console.log('提交数据:', commits); // 打印提交数据以进行调试
+        if (commits.length > 0) {
+            const lastCommitDate = commits[0].commit.committer.date;
+            console.log("最后一次提交时间: " + new Date(lastCommitDate).toLocaleString());
+        } else {
+            console.log("没有可用的提交记录");
+        }
+    })
+    .catch(error => {
+        console.error('获取提交数据失败: ', error);
+    });
+
+
+// 假设你有一个获取用户IP地址的函数
+// 假设你有一个获取用户IP地址的函数
+function getUserIP() {
+    return fetch('https://api.ipify.org?format=json') // 调用获取IP地址的API
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('网络错误'); // 如果响应不成功，抛出错误
+            }
+            return response.json(); // 解析为JSON格式
+        })
+        .then(data => data.ip) // 返回IP地址
+        .catch(error => {
+            console.error('获取IP地址失败: ', error); // 处理错误
+            return "无法获取IP地址"; // 返回一个默认值或错误信息
+        });
+}
+
+
+
+// 判断某个条件来显示IP地址
+function displayIP() {
+    let condition = true; // 这里可以更改为任何逻辑条件
+    if (condition) {
+        let ipAddress = getUserIP();
+        document.getElementById("ip").textContent = "你的IP地址: " + ipAddress;
+    } else {
+        document.getElementById("ip").textContent = "无法获取IP地址";
+    }
+}
+
+// 页面加载时执行显示IP地址的函数
+window.onload = displayIP;
+
+
+
 
