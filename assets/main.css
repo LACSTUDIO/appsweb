@@ -5,7 +5,12 @@ body {
     padding: 0;
     background-color: #f4f4f4;
 }
-@media (min-width: 600px) {
+
+.main_content {
+    margin-top: 80px; /* 确保内容不被导航栏遮挡 */
+}
+
+@media (max-width: 600px) {
     .search-container_big {
         width: auto; /* 使输入框宽度充满卡片 */
         height: 40px; /* 固定输入框高度 */
@@ -17,14 +22,7 @@ body {
     }
 
     .container-middle {
-        height: 440px;
-        width: 90%;
-        background-color: black;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr); /* 一行三个卡片 */
-        gap: 20px; /* 卡片之间的间距 */
-        margin: 10px; /* 合并上下边距 */
-        padding: 20px;
+        grid-template-columns: repeat(2, 1fr); /* 一行三个卡片 */
     }
 }
 
@@ -64,8 +62,8 @@ body {
     width: 90%;
     background-color: white;
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 一行两个卡片 */
-    gap: 20px; /* 卡片之间的间距 */
+    grid-template-columns: repeat(3, 1fr); /* 一行两个卡片 */
+    gap: 10px; /* 卡片之间的间距 */
     margin: 10px 10px;
     padding: 20px;
 }

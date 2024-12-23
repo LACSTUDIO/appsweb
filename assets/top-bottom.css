@@ -7,9 +7,12 @@
     left: 0; /* 左侧对齐 */
     width: 100%; /* 宽度100% */
     height: 70px; /* 高度 */
-    z-index: 1000; /* 确保在其他元素之上 */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+    z-index: 1000;
 }
+
+
+
 .theme-selector {
     margin-left: 20px;
 }

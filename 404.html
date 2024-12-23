@@ -14,22 +14,23 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   </head>
 <body>
-<div>
-    <nav class="navbar navbar-expand-lg">
+<!-- 顶部导航栏 -->
+<div class="main_content">
+    <nav class="navbar navbar-expand-lg" style="position: fixed; top: 0; width: 100%; z-index: 1000;">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
             </button>
-<div id="logo" class="navbar-logo">
-    <span class="navbar-brand">软件资源(测试)</span>
-</div>
-<div class="theme-selector">
-<select class="form-select" id="themeSelector" onchange="toggleTheme(this.value)">
-    <option value="light" selected="selected">浅色</option>
-    <option value="dark">深色</option>
-</select>
+            <div id="logo" class="navbar-logo">
+                <span class="navbar-brand">软件资源(测试)</span>
+            </div>
+            <div class="theme-selector">
+                <select class="form-select" id="themeSelector" onchange="toggleTheme(this.value)">
+                    <option value="light" selected="selected">浅色</option>
+                    <option value="dark">深色</option>
+                </select>
+            </div>
 
-</div>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">主页</a></li>
@@ -37,8 +38,8 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">PC</a>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a class="dropdown-item" href="#">系统相关</a></li>
-                            <li><a class="dropdown-item" href="#">编程调试</a></li>
+                            <li><a class="dropdown-item" href="404.html">系统相关</a></li>
+                            <li><a class="dropdown-item" href="404.html">编程调试</a></li>
                             <li><a class="dropdown-item" href="#">上传下载</a></li>
                             <li><a class="dropdown-item" href="#">办公学习</a></li>
                             <li><a class="dropdown-item" href="#">视频音频</a></li>
@@ -48,8 +49,8 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">安卓</a>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                            <li><a class="dropdown-item" href="#">系统相关</a></li>
-                            <li><a class="dropdown-item" href="#">编程调试</a></li>
+                            <li><a class="dropdown-item" href="404.html">系统相关</a></li>
+                            <li><a class="dropdown-item" href="404.html">编程调试</a></li>
                             <li><a class="dropdown-item" href="#">上传下载</a></li>
                             <li><a class="dropdown-item" href="#">办公学习</a></li>
                             <li><a class="dropdown-item" href="#">视频音频</a></li>
@@ -75,8 +76,11 @@
         <a href="index.html" class="button-long" style="text-decoration: none;">返回首页</a>
     </div>
     <img src="img/icon/施工.svg" alt="施工图标" style="width: 150px; height: auto; margin-bottom: 20px;">
-    <p style="font-size: 18px; color: #333;">该页面正在建设中，敬请期待！</p>
-    <p>我们正在努力为您提供更好的服务和内容，敬请关注我们的最新动态！</p>
+    <span style="font-size: 18px; color: #666; font-weight: bold;">
+    该页面正在建设中，敬请期待！
+    <br>
+    正在努力为您提供更好的服务和内容，敬请关注我们的最新动态！
+    </span>
 </div>
 
 

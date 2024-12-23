@@ -71,16 +71,21 @@
 </head>
 <body class="background">
     <div class="card">
-        <h4>账号登录(测试)</h4>
-        <form id="login">
-    <input id="user" name="username" placeholder="请输入用户名" aria-required="true" class="search-container" type="text">
-    <input id="pwd" name="password" placeholder="请输入密码" aria-required="true" class="search-container" type="password" maxlength="4">
-    <div class="checkbox-container">
-        <input class="checkbox" type="checkbox" id="remember" name="remember" >
-        <label for="remember" class="checkbox-label">记住密码</label>
-    </div>
-    <button type="submit" class="big_button">登录</button>
-</form>
+    <h4>账号登录(测试)</h4>
+    <form id="login">
+        <label for="user">用户名:</label>
+        <input id="user" name="username" placeholder="请输入用户名" aria-required="true" class="search-container" type="text">
+
+        <label for="pwd">密码:</label>
+        <input id="pwd" name="password" placeholder="请输入密码" aria-required="true" class="search-container" type="password" maxlength="4">
+
+        <div class="checkbox-container">
+            <input class="checkbox" type="checkbox" id="remember" name="remember">
+            <label for="remember" class="checkbox-label">记住密码</label>
+        </div>
+
+        <button type="submit" class="big_button">登录</button>
+    </form>
 </div>
 </body>
 <script src="js/login_main.js"></script>

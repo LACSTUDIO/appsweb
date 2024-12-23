@@ -87,16 +87,6 @@ function handleImageError(image) {
     }
 }
 
-// 弹窗显示二维码
-function openQRCode() {
-    toggleModal('qrModal', true);
-}
-
-// 关闭二维码弹窗
-function closeQRCode() {
-    toggleModal('qrModal', false);
-}
-
 // 显示免责声明
 function showDisclaimer() {
     document.getElementById('disclaimer-modal').style.display = 'flex';
@@ -200,21 +190,29 @@ function toggleTheme(theme) {
         title.classList.toggle('dark', theme === 'dark');
     });
 
-    document.querySelectorAll('.container-litte, .container').forEach(container => {
+    document.querySelectorAll('.container').forEach(container => {
         container.classList.toggle('dark', theme === 'dark');
     });
 
     // 设置下拉框中的选项文本
     document.querySelectorAll('select').forEach(select => {
-        select.options[0].text = theme === 'dark' ? '深色' : '浅色';
+        select.options[0].text = '浅色'; // 默认显示切换主题
     });
 
+    // 显示当前主题的消息
     message.innerText = theme === 'dark' ? '已进入深色主题' : '已进入浅色主题';
     body.appendChild(message);
     setTimeout(() => body.removeChild(message), 1000);
 
-    localStorage.setItem('theme', theme);
+    localStorage.setItem('theme', theme); // 存储当前主题到localStorage
 }
+
+// 页面加载时读取并应用存储中的主题
+document.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme') || 'light'; // 默认主题为浅色
+    toggleTheme(savedTheme); // 应用存储中的主题
+});
+
 
 // 切换navbar的主题样式
 function toggleNavbarTheme(theme) {
@@ -262,7 +260,7 @@ function getOSInfo() {
 
     if (userAgent.indexOf("Win") !== -1) os = "Windows";
     else if (userAgent.indexOf("Mac") !== -1) os = "MacOS";
-    else if (userAgent.indexOf("X11") !== -1 || userAgent.indexOf("Linux") !== -1) os = "Linux";
+    else if (userAgent.indexOf("X11") !== -1 || userAgent.indexOf("Linux") !== -1) os = "Linux OR Android";
     else if (userAgent.indexOf("Android") !== -1) os = "Android";
     else if (userAgent.indexOf("iPhone") !== -1 || userAgent.indexOf("iPad") !== -1) os = "iOS";
     else if (userAgent.indexOf("iPod") !== -1) os = "iPod";

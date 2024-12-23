@@ -14,22 +14,23 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   </head>
 <body>
+<!-- 顶部导航栏 -->
 <div>
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg" style="position: fixed; top: 0; width: 100%; z-index: 1000;">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
             </button>
-<div id="logo" class="navbar-logo">
-    <span class="navbar-brand">软件资源(测试)</span>
-</div>
-<div class="theme-selector">
-<select class="form-select" id="themeSelector" onchange="toggleTheme(this.value)">
-    <option value="light">浅色</option>
-    <option value="dark">深色</option>
-</select>
+            <div id="logo" class="navbar-logo">
+                <span class="navbar-brand">软件资源(测试)</span>
+            </div>
+            <div class="theme-selector">
+                <select class="form-select" id="themeSelector" onchange="toggleTheme(this.value)">
+                    <option value="light" selected="selected">浅色</option>
+                    <option value="dark">深色</option>
+                </select>
+            </div>
 
-</div>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">主页</a></li>
@@ -37,8 +38,8 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">PC</a>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a class="dropdown-item" href="#">系统相关</a></li>
-                            <li><a class="dropdown-item" href="#">编程调试</a></li>
+                            <li><a class="dropdown-item" href="404.html">系统相关</a></li>
+                            <li><a class="dropdown-item" href="404.html">编程调试</a></li>
                             <li><a class="dropdown-item" href="#">上传下载</a></li>
                             <li><a class="dropdown-item" href="#">办公学习</a></li>
                             <li><a class="dropdown-item" href="#">视频音频</a></li>
@@ -48,15 +49,15 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">安卓</a>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                            <li><a class="dropdown-item" href="#">系统相关</a></li>
-                            <li><a class="dropdown-item" href="#">编程调试</a></li>
+                            <li><a class="dropdown-item" href="404.html">系统相关</a></li>
+                            <li><a class="dropdown-item" href="404.html">编程调试</a></li>
                             <li><a class="dropdown-item" href="#">上传下载</a></li>
                             <li><a class="dropdown-item" href="#">办公学习</a></li>
                             <li><a class="dropdown-item" href="#">视频音频</a></li>
                             <li><a class="dropdown-item" href="#">安全防护</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="#">最新</a></li>
+                    <li class="nav-item"><a class="nav-link" href="404.html">最新</a></li>
                     <div style="display: flex; align-items: center;">
                         <img id="avatar" src="img/icon/mr.svg" alt="头像" style="width: 30px; height: 30px; border-radius: 50%; margin-right: 10px; display: none;">
                         <span id="login-status" class="nav-item" style="margin-right: 10px; color: #666;"></span>
@@ -70,14 +71,14 @@
     </nav>
 </div>
 
-<div class="background">
+<div class="main_content">
     <div class="container">
         <h2 class="title">基础信息</h2>
         <p id="time">网站运行时间:</p>
         <p id="version">网站版本号:V2</p>
         <p id="update_time">网站最新更新时间:</p>
         <p id="ip">你的IP地址:</p>
-        <p id="os_version">操作系统:</p>
+        <p id="os_version">你的操作系统:</p>
     </div>
 </div>
     <section class="container">
@@ -129,20 +130,14 @@
             <h2 class="title">免责声明</h2>
             <ul>
                 <li>本站为个人博客</li>
-                <p>
                     博客所发布的一切信息及软件的文章仅限用于学习和研究目的；
                     不得将上述内容用于商业或者非法用途，否则，一切后果请用户自负。
-                </p>
                 <li>本站信息来自网络</li>
-                <p>
                     版权争议与本站无关，您必须在下载后24个小时内，从您的电脑中彻底删除上述内容。
                     访问和下载本站内容，说明您已同意上述条款。
-                </p>
                 <li>本站为非盈利性站点</li>
-                <p>
                     捐赠仅仅作为用户喜欢本站捐赠打赏功能，
                     本站不贩卖软件，所有内容不作为商业行为。
-                </p>
             </ul>
         </div>
         
@@ -152,14 +147,12 @@
             <ul>
                 <li>本站主要分享一些软件资源，包括系统软件、办公软件、编程软件、视频音频软件等；</li>
                 <li>本站提供软件下载、软件推荐和软件评论等功能；</li>
-                <li>本站不提供任何形式的广告，所有广告均来自于第三方平台；</li>
+                <li>本站不提供任何形式的广告，所有广告均来自第三方平台；</li>
             </ul>
         </div>
     </div>
 </section>
 
-
-</div>
 <!-- 底部 -->
 <footer class="footer">
     <p>© 2024 领创工作室 友链:
