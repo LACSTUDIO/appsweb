@@ -175,6 +175,7 @@ p {
 .button-long {
     width: 100px;
     height: 40px;
+    margin: 10px;
     padding: 10px;
     font-size: 18px;
     border-radius: 5px;
