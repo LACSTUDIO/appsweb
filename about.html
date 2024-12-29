@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="领创工作室">
-    <meta name="keywords" content="软件资源, 软件下载, 软件推荐">
+    <meta name="keywords" content="软件资源, 软件下载, 软件推荐,领创,软件推荐">
     <meta name="copyright" content="Copyright © 2024 领创工作室. All Rights Reserved.">
     <title>软件资源(测试)</title>
     <link rel="stylesheet" href="assets/main.css">
@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="assets/styles.css">
     <link rel="stylesheet" href="assets/light-dark.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  </head>
+</head>
 <body>
 <!-- 顶部导航栏 -->
 <div>
@@ -30,6 +30,7 @@
                     <option value="dark">深色</option>
                 </select>
             </div>
+
 
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
@@ -58,12 +59,15 @@
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="404.html">最新</a></li>
-                    <div style="display: flex; align-items: center;">
-                        <img id="avatar" src="img/icon/mr.svg" alt="头像" style="width: 30px; height: 30px; border-radius: 50%; margin-right: 10px; display: none;">
-                        <span id="login-status" class="nav-item" style="margin-right: 10px; color: #666;"></span>
-                        <div class="nav-item" style="display: flex; align-items: center; margin-right: 15px;">
-                            <button id="login-button" class="button-long">登录账号</button>
+                    <li class="nav-item">
+                        <div style="display: flex; align-items: center;">
+                            <img id="avatar" src="img/icon/mr.svg" alt="头像" style="width: 30px; height: 30px; border-radius: 50%; margin-right: 10px; display: none;">
+                            <span id="login-status" class="nav-item" style="margin-right: 10px; color: #666;"></span>
                         </div>
+                    </li>
+                    <div class="nav-item" style="display: flex; align-items: center; margin-right: 15px; ">
+                        <button id="login-button" class="button-long">登录账号</button>
+                        <button id="setting-button" class="button-long">网站设置</button>
                     </div>
                 </ul>
             </div>
@@ -71,21 +75,23 @@
     </nav>
 </div>
 
+<!-- 主体内容 -->
 <div class="main_content">
     <div class="container">
         <h2 class="title">基础信息</h2>
-        <p id="time">网站运行时间:</p>
+        <p id="time"></p>
         <p id="version">网站版本号:V2</p>
-        <p id="update_time">网站最新更新时间:</p>
-        <p id="ip">你的IP地址:</p>
-        <p id="os_version">你的操作系统:</p>
+        <p id="update_time">最新更新时间:</p>
+        <p id="ip"></p>
+        <p id="os_version"></p>
+        <p id="displayMode"></p>
     </div>
 </div>
-    <section class="container">
+<section class="container">
     <div class="row">
         <!--媒体平台卡片-->
         <div class="col-md-6">
-            <div class="container">
+            <div class="container" style="margin: 10px 0;">
                 <h3 class="title">媒体平台</h3>
                 <p>
                     哔哩哔哩: 
@@ -106,7 +112,7 @@
         </div>
         <!-- 联系方式卡片 -->
         <div class="col-md-6">
-            <div class="container">
+            <div class="container" style="margin: 10px 0;">
                 <h3 class="title">联系方式</h3>
                 <p>
                     邮箱: 
@@ -125,8 +131,8 @@
                 </p>
             </div>
         </div>
-        
-        <div class="container">
+        <div class="col-md-6">
+        <div class="container" style="margin: 10px 0;">
             <h2 class="title">免责声明</h2>
             <ul>
                 <li>本站为个人博客</li>
@@ -140,15 +146,17 @@
                     本站不贩卖软件，所有内容不作为商业行为。
             </ul>
         </div>
-        
-        <div class="container">
+        </div>
+        <div class="col-md-6">
+        <div class="container" style="margin: 10px 0;">
             <h2 class="title">关于本站</h2>
             <h4 class="title" >本站为记录个人学习web开发为出发点而建立的网站</h4>
             <ul>
-                <li>本站主要分享一些软件资源，包括系统软件、办公软件、编程软件、视频音频软件等；</li>
-                <li>本站提供软件下载、软件推荐和软件评论等功能；</li>
-                <li>本站不提供任何形式的广告，所有广告均来自第三方平台；</li>
+                <li>本站主要分享一些软件资源，包括系统软件、办公软件、编程软件、视频音频软件等</li>
+                <li>本站提供软件下载、软件推荐和软件评论等功能</li>
+                <li>本站不提供任何形式的广告，所有广告均来自第三方平台</li>
             </ul>
+        </div>
         </div>
     </div>
 </section>
@@ -158,84 +166,102 @@
     <p>© 2024 领创工作室 友链:
         <a href="https://www.xn--5brr03o.top/" class="link-style" target="_blank" rel="noopener">领创工作室</a>
         <a href="https://xn--9krq6q.xn--5brr03o.top/" class="link-style" target="_blank" rel="noopener">领创博客</a>
-        <a class="link-style" href="javascript:void(0);" onclick="showDisclaimer()">免责声明</a>
-    <svg
-    class="icon"
-    viewBox="0 0 1024 1024"
-    xmlns="http://www.w3.org/2000/svg"
-    width="200"
-    height="200"
-    onclick="window.open('https://github.com/LACSTUDIO/appsweb', '_blank')"
-    role="img"
-    aria-label="本站GitHub仓库"
->
-    <title>GitHub Link</title>
-    <path
-        d="M20.48 503.72608c0 214.4256 137.4208 396.73856 328.94976 463.6672
-        25.8048 6.5536 21.87264-11.8784 21.87264-24.33024v-85.07392c-148.93056 17.44896
-        -154.86976-81.1008-164.94592-97.52576-20.23424-34.52928-67.91168-43.33568-53.69856-59.76064
-        33.91488-17.44896 68.48512 4.42368 108.46208 63.61088 28.95872 42.88512 85.44256 35.6352
-        114.15552 28.4672a138.8544 138.8544 0 0 1 38.0928-66.7648c-154.25536-27.60704
-        -218.60352-121.77408-218.60352-233.79968 0-54.31296 17.94048-104.2432 53.0432-144.54784
-        -22.36416-66.43712 2.08896-123.24864 5.3248-131.6864 63.81568-5.7344 130.00704 45.6704
-        135.168 49.68448 36.2496-9.78944 77.57824-14.9504 123.82208-14.9504 46.4896 0 88.064
-        5.3248 124.5184 15.23712 12.288-9.4208 73.80992-53.53472 133.12-48.128 3.15392 8.43776
-        27.0336 63.93856 6.02112 129.4336 35.59424 40.38656 53.69856 90.76736 53.69856 145.24416
-        0 112.18944-64.7168 206.4384-219.42272 233.71776a140.0832 140.0832 0 0 1 41.7792 99.9424
-        v123.4944c0.86016 9.87136 0 19.6608 16.50688 19.6608 194.31424-65.49504 334.2336-249.15968
-        334.2336-465.5104C1002.57792 232.48896 782.66368 12.77952 511.5904 12.77952 240.18944
-        12.65664 20.48 232.40704 20.48 503.72608z"
-        fill="#000000"
-        opacity=".65"
-    ></path>
-</svg>
+        <a href="javascript:void(0);" onclick="showDisclaimer()" style="color: #00a0e9;">免责声明</a>
+        <svg
+                class="icon"
+                viewBox="0 0 1024 1024"
+                xmlns="http://www.w3.org/2000/svg"
+                width="200"
+                height="200"
+                onclick="window.open('https://github.com/LACSTUDIO/appsweb', '_blank')"
+                role="img"
+                aria-label="本站GitHub仓库"
+        >
+            <title>GitHub Link</title>
+            <path
+                    d="M20.48 503.72608c0 214.4256 137.4208 396.73856 328.94976 463.6672
+      25.8048 6.5536 21.87264-11.8784 21.87264-24.33024v-85.07392c-148.93056 17.44896
+      -154.86976-81.1008-164.94592-97.52576-20.23424-34.52928-67.91168-43.33568-53.69856-59.76064
+      33.91488-17.44896 68.48512 4.42368 108.46208 63.61088 28.95872 42.88512 85.44256 35.6352
+      114.15552 28.4672a138.8544 138.8544 0 0 1 38.0928-66.7648c-154.25536-27.60704
+      -218.60352-121.77408-218.60352-233.79968 0-54.31296 17.94048-104.2432 53.0432-144.54784
+      -22.36416-66.43712 2.08896-123.24864 5.3248-131.6864 63.81568-5.7344 130.00704 45.6704
+      135.168 49.68448 36.2496-9.78944 77.57824-14.9504 123.82208-14.9504 46.4896 0 88.064
+      5.3248 124.5184 15.23712 12.288-9.4208 73.80992-53.53472 133.12-48.128 3.15392 8.43776
+      27.0336 63.93856 6.02112 129.4336 35.59424 40.38656 53.69856 90.76736 53.69856 145.24416
+      0 112.18944-64.7168 206.4384-219.42272 233.71776a140.0832 140.0832 0 0 1 41.7792 99.9424
+      v123.4944c0.86016 9.87136 0 19.6608 16.50688 19.6608 194.31424-65.49504 334.2336-249.15968
+      334.2336-465.5104C1002.57792 232.48896 782.66368 12.77952 511.5904 12.77952 240.18944
+      12.65664 20.48 232.40704 20.48 503.72608z"
+                    fill="#000000"
+                    opacity=".65"
+            ></path>
+        </svg>
 
-</p>
+    </p>
 </footer>
-    <!-- 免责声明弹窗 -->
-    <div id="disclaimer-modal" class="modal">
-        <div class="modal-content">
-            <button class="close" onclick="closeDisclaimer()">
-                <img src="img/icon/close.svg" alt="关闭" class="close-icon">
-            </button>
-            <h3 class="title">免责声明</h3>
-            <hr>
-            <h5>本站为个人博客</h5>
-            <p>博客所发布的一切信息及软件的文章仅限用于学习和研究目的；不得将上述内容用于商业或者非法用途，否则，一切后果请用户自负。</p>
-            <h5>本站信息来自网络</h5>
-            <p>版权争议与本站无关，您必须在下载后的24个小时之内，从您的电脑中彻底删除上述内容。访问和下载本站内容，说明您已同意上述条款。</p>
-            <h5>本站为非盈利性站点</h5>
-            <p>本站不贩卖软件，所有内容不作为商业行为。</p>
-        </div>
+<!-- 免责声明弹窗 -->
+<div id="disclaimer-modal" class="modal">
+    <div class="modal-content">
+        <button class="close" onclick="closeDisclaimer()">
+            <img src="img/icon/close.svg" alt="关闭" class="close-icon">
+        </button>
+        <h3 class="title">免责声明</h3>
+        <hr>
+        <h5>本站为个人博客</h5>
+        <p>博客所发布的一切信息及软件的文章仅限用于学习和研究目的；不得将上述内容用于商业或者非法用途，否则，一切后果请用户自负。</p>
+        <h5>本站信息来自网络</h5>
+        <p>版权争议与本站无关，您必须在下载后的24个小时之内，从您的电脑中彻底删除上述内容。访问和下载本站内容，说明您已同意上述条款。</p>
+        <h5>本站为非盈利性站点</h5>
+        <p>本站不贩卖软件，所有内容不作为商业行为。</p>
     </div>
-
-    <!-- 账号管理弹窗 -->
-    <div id="account-modal" class="modal">
-        <div class="modal-content">
-            <button class="close" onclick="closeAccountModal()">
-                <img src="img/icon/close.svg" alt="关闭" class="close-icon">
-            </button>
-            <h3 class="title">账号管理</h3>
-            <hr>
-            <div>
-                <label for="avatarInput">头像：</label>
-                <input type="file" id="avatarInput" accept="image/*" title="选择头像" placeholder="请选择一张图片">
+</div>
+<!-- 账号管理弹窗 -->
+<div id="account-modal" class="modal">
+    <div class="modal-content">
+        <button class="close" onclick="closeAccountModal()">
+            <img src="img/icon/close.svg" alt="关闭" class="close-icon">
+        </button>
+        <h3 class="title">账号管理</h3>
+        <hr>
+        <div style="text-align: center;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span>头像：</span>
+                <button onclick="document.getElementById('avatarInput').click();" class="button-long">更改头像</button>
+                <input type="file" id="avatarInput" accept="image/*" title="更改头像" style="display: none;" onchange="updateFileName()">
+                <input type="text" id="fileNameInput" title="头像文件名" placeholder="头像文件名" readonly>
             </div>
-            <div>
-                <label for="usernameInput">用户名：</label>
+            <div style="margin: 10px 0;">
                 <input type="text" id="usernameInput" title="请输入用户名" placeholder="用户名" required>
             </div>
-            <div>
-                <label for="passwordInput">密码：</label>
+            <div style="margin: 5px 0;">
                 <input type="password" id="passwordInput" title="请输入密码" placeholder="密码" required>
             </div>
-            <div style="display: flex; gap: 10px;">
-                <button onclick="updateAccount()" class="button-long">保存修改</button>
-                <button onclick="logout()" class="button-long">退出登录</button>
+            <div style="display: flex; gap: 10px; justify-content: center;">
+                <button onclick="updateAccount()" class="button-long" id="save">保存修改</button>
+                <button onclick="logout()" class="button-long" style="background-color: red;">退出登录</button>
             </div>
         </div>
     </div>
-   <!-- 模态框 -->
+</div>
+<!-- 网站设置弹窗 -->
+<div id="settings-modal" class="modal">
+    <div class="modal-content">
+        <button id="close_btn" class="close" onclick="closeAccountModal()">
+            <img src="img/icon/close.svg" alt="关闭" class="close-icon">
+        </button>
+        <h3 class="title">网站设置</h3>
+        <hr>
+        <div style="text-align: center;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span>网站名称：</span>
+                <button onclick="document.getElementById('avatarInput').click();" class="button-long"/>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 二维码弹窗 -->
 <div id="qrModal" class="modal">
     <div class="modal-content">
         <button class="close" onclick="closeQRCode()">
@@ -250,6 +276,112 @@
 <script src="js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // 网站显示模式
+    function updateDisplayMode() {
+        const displayMode = document.getElementById('displayMode');
+        displayMode.innerText = window.innerWidth > 768 ? '网站显示模式: 电脑模式' : '网站显示模式: 手机模式';
+    }
+
+    // 页面加载时和窗口大小调整时更新显示模式
+    window.onresize = updateDisplayMode;
+    updateDisplayMode(); // 初始调用
+
+    // 获取操作系统信息
+    function getOSInfo() {
+    const userAgent = window.navigator.userAgent;
+    const osMap = {
+        "Win": "Windows",
+        "Mac": "MacOS",
+        "Android": "Android",
+        "iPhone": "iOS",
+        "iPad": "iOS",
+        "BlackBerry": "BlackBerry",
+        "IEMobile": "IEMobile",
+    };
+
+    const detectedOS = Object.keys(osMap).find(key => userAgent.includes(key));
+    return detectedOS ? osMap[detectedOS] : "未知操作系统";
+    }
+
+    // 更新操作系统信息到页面
+    document.addEventListener("DOMContentLoaded", () => {
+        try {
+            const osVersionElement = document.getElementById("os_version");
+            if (!osVersionElement) {
+                throw new Error('无法找到操作系统信息的DOM元素');
+            }
+            osVersionElement.innerHTML = "你的操作系统: " + getOSInfo();
+        } catch (error) {
+            console.error('更新操作系统信息时出错: ', error);
+        }
+    });
+
+
+    // 计算网站运行时间
+    const startTime = new Date('2024-11-22T10:35:55Z');
+    function updateTime() {
+        const now = new Date();
+        const elapsedTime = Math.floor((now - startTime) / 1000);
+
+        const days = Math.floor(elapsedTime / (3600 * 24));
+        const hours = Math.floor((elapsedTime % (3600 * 24)) / 3600);
+        const minutes = Math.floor((elapsedTime % 3600) / 60);
+        const seconds = elapsedTime % 60;
+
+        const timeStr = `${days}天 ${hours}小时 ${minutes}分钟 ${seconds}秒`;
+        document.getElementById('time').innerText = `网站运行时间: ${timeStr}`;
+    }
+
+    // 每秒更新一次
+    setInterval(updateTime, 1000);
+
+    // 获取用户IP地址
+    const UNABLE_TO_GET_IP = "无法获取IP地址";
+
+    async function getUserIP() {
+        try {
+            if (window.localStorage.getItem('userIP')) {
+                return window.localStorage.getItem('userIP');
+            }
+
+            const response = await fetch('https://api.ipify.org?format=json');
+            if (!response.ok) throw new Error('网络错误');
+
+            const data = await response.json();
+            window.localStorage.setItem('userIP', data.ip); // 缓存IP地址
+            return data.ip; // 返回IP地址
+        } catch (error) {
+            console.error('获取IP地址失败: ', error);
+            return UNABLE_TO_GET_IP; // 返回一个默认值或错误信息
+        }
+    }
+
+    // 显示IP地址
+    async function displayIP() {
+        try {
+            const ipAddress = await getUserIP();
+            document.getElementById("ip").textContent = "你的IP地址: " + ipAddress;
+        } catch (error) {
+            console.error('显示IP地址时出错: ', error);
+            document.getElementById("ip").textContent = "你的IP地址: " + UNABLE_TO_GET_IP;
+        }
+    }
+
+    // 页面加载时执行显示IP地址的函数
+    document.addEventListener("DOMContentLoaded", displayIP);
+
+
+    // 页面加载时执行显示IP地址的函数
+    fetch('https://api.github.com/repos/LACSTUDIO/appsweb')
+        .then(response => response.json())
+        .then(data => {
+            const updateTime = new Date(data.updated_at);
+            const formattedTime = `${updateTime.getFullYear()}年${updateTime.getMonth() + 1}月${updateTime.getDate()}日 ${updateTime.getHours()}时${updateTime.getMinutes()}分`;
+            document.getElementById('update_time').textContent += ' ' + formattedTime;
+        })
+        .catch(error => console.error('Error:', error));
+</script>
 </body>
 
 </html>

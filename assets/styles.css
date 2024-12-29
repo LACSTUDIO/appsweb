@@ -15,9 +15,7 @@
     }
 
 }
-.main_background {
-    background-image: url(3.webp); /* 修正为正确的背景图片路径 */
-}
+
 
 /* 分隔符的样式 */
 .blue-bar {
