@@ -6,17 +6,6 @@
 .qd, .link-style, .close, .blue-bar {
     color: #00a0e9;
 }
-@media (max-width: 998px) {
-    .modal-background,
-    .modal-content  {
-        padding: 10px; /* 减小内边距 */
-        width: 80%; /* 设置弹窗内容宽度为80% */
-        max-width: 350px;
-        height: auto; /* 高度根据内容自适应 */
-        margin: 10%  10%; /* 上下留出一定的间隔 */
-    }
-
-}
 
 
 /* 分隔符的样式 */
@@ -59,7 +48,6 @@
     width: 90%; /* 弹窗宽度 */
     margin: 0 auto; /* 水平居中 */
     max-width: 600px;
-
     box-sizing: border-box; /* 包含内边距和边框在内的宽度 */
 }
 .modal-main {
@@ -264,3 +252,30 @@
     color: #333; /* 调整字体颜色 */
 }
 
+@media (max-width: 998px) {
+    .modal-content  {
+        max-height: 80vh; /* 最大高度为视口高度的80% */
+        padding: 20px; /* 内边距 */
+        background-color: #ccc; /* 背景颜色 */
+        border-radius: 16px; /* 圆角 */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 阴影 */
+        width: 90%; /* 弹窗宽度 */
+        margin: 0 10px; /* 水平居中 */
+        max-width: 400px;
+        box-sizing: border-box; /* 包含内边距和边框在内的宽度 */
+    }
+
+}
+@media (min-width: 999px) {
+    .modal-content {
+        max-height: 80vh; /* 最大高度为视口高度的80% */
+        padding: 20px; /* 内边距 */
+        background-color: #ccc; /* 背景颜色 */
+        border-radius: 16px; /* 圆角 */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 阴影 */
+        width: 90%; /* 弹窗宽度 */
+        margin: 0 auto; /* 水平居中 */
+        max-width: 600px;
+        box-sizing: border-box; /* 包含内边距和边框在内的宽度 */
+    }
+}
