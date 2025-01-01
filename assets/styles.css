@@ -46,10 +46,9 @@
     text-align: center;
     background-color: #00a0e9;
     border-radius: 8px;
-    display: table;
+    display: flex;
     align-items: center; /* 垂直居中 */
-    justify-content: flex-start; /* 如果你需要左对齐 */
-    height: 60px; /* 根据需要设定高度 */
+    height: 40px; /* 根据需要设定高度 */
 }
 .modal-content {
     max-height: 80vh; /* 最大高度为视口高度的80% */

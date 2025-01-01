@@ -109,8 +109,6 @@ window.onclick = function(event) {
     }
 }
 
-
-
 // 二维码弹窗
 function openQRCode(type) {
     const qrCodeUrlMap = {
@@ -158,11 +156,10 @@ document.addEventListener('DOMContentLoaded', () => {
     toggleTheme(savedTheme);
 });
 
-
-// 控制侧边栏菜单的显示与隐藏
+// 侧边栏菜单
 function toggleMenu() {
     const sideMenu = document.getElementById('sideMenu');
-    const mainContent = document.getElementById('mainContent');
+    const mainContent = document.querySelector('.main_content');  // 使用 class 选择器
 
     // 如果侧边栏已经展开，隐藏它；否则，显示它
     if (sideMenu.style.left === '0px') {
@@ -170,9 +167,11 @@ function toggleMenu() {
         mainContent.style.marginLeft = '0';  // 恢复主内容
     } else {
         sideMenu.style.left = '0';  // 显示侧边栏
-        mainContent.style.marginLeft = '250px';  // 主内容向右偏移，避免被菜单遮挡
+        mainContent.style.marginLeft = '0px';  // 主内容向右偏移，避免被菜单遮挡
     }
 }
+
+
 
 // 灵动信息弹窗
 function showStatusModal(message) {
