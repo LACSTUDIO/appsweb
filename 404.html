@@ -16,9 +16,9 @@
 <body>
 <!-- 顶部导航栏 -->
 <div>
-    <nav class="navbar navbar-expand-lg" style="position: fixed; top: 0; width: 100%; z-index: 1000;">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="position: fixed; top: 0; height: 70px; width: 100%; z-index: 1000;">
+        <div class="container-fluid" >
+            <button id="toggle-menu" class="navbar-toggler" type="button" onclick="toggleMenu()">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div id="logo" class="navbar-logo">
@@ -30,10 +30,10 @@
                     <option value="dark">深色</option>
                 </select>
             </div>
-
-
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+            <!-- 手机界面侧边菜单 -->
+            <div class="side-menu" id="sideMenu">
+                <div class="close-btn" onclick="toggleMenu()">×</div>
+                <ul>
                     <li class="nav-item"><a class="nav-link" href="index.html">主页</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">关于</a></li>
                     <li class="nav-item dropdown">
@@ -59,22 +59,76 @@
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="404.html">最新</a></li>
-                    <li class="nav-item">
-                        <div style="display: flex; align-items: center;">
-                            <img id="avatar" src="img/icon/mr.svg" alt="头像" style="width: 30px; height: 30px; border-radius: 50%; margin-right: 10px; display: none;">
-                            <span id="login-status" class="nav-item" style="margin-right: 10px; color: #666;"></span>
-                        </div>
+
+                    <li class="nav-item dropdown" id="user-info-phone" style="display: flex; align-items: center;">
+                        <!-- 用户头像 -->
+                        <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink-phone" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img id="avatar-phone" src="img/icon/mr.svg" alt="头像" style="width: 30px; height: 30px; border-radius: 50%; margin-right: 10px;">
+                            <span id="login-status-phone" style="margin-right: 10px; color: #666;">登录状态</span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink-phone" id="user-dropdown-menu-content-phone">
+                            <li><a class="dropdown-item" href="#">个人中心</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="logout()">退出登录</a></li>
+                        </ul>
                     </li>
-                    <div class="nav-item" style="display: flex; align-items: center; margin-right: 15px; ">
-                        <button id="login-button" class="button-long">登录账号</button>
-                        <button id="setting-button" class="button-long">网站设置</button>
+                    <!-- 登录按钮 -->
+                    <div id="login-button-phone" style="display: flex; align-items: center; margin-right: 15px;">
+                        <button class="button-long" >登录注册</button>
+                    </div>
+
+                </ul>
+            </div>
+            <!--  PC 端导航栏 -->
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mb-2 mb-lg-0 ms-auto" >
+                    <li class="nav-item"><a class="nav-link" href="index.html">主页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">关于</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">PC</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a class="dropdown-item" href="404.html">系统相关</a></li>
+                            <li><a class="dropdown-item" href="404.html">编程调试</a></li>
+                            <li><a class="dropdown-item" href="#">上传下载</a></li>
+                            <li><a class="dropdown-item" href="#">办公学习</a></li>
+                            <li><a class="dropdown-item" href="#">视频音频</a></li>
+                            <li><a class="dropdown-item" href="#">安全防护</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">安卓</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <li><a class="dropdown-item" href="404.html">系统相关</a></li>
+                            <li><a class="dropdown-item" href="404.html">编程调试</a></li>
+                            <li><a class="dropdown-item" href="#">上传下载</a></li>
+                            <li><a class="dropdown-item" href="#">办公学习</a></li>
+                            <li><a class="dropdown-item" href="#">视频音频</a></li>
+                            <li><a class="dropdown-item" href="#">安全防护</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="404.html">最新</a></li>
+                    <!-- TODO: 需要优化账号登录方式  -->
+                    <!-- 用户下拉菜单 -->
+                    <li class="nav-item dropdown" id="user-info" style="display: flex; align-items: center;">
+                        <!-- 用户头像 -->
+                        <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img id="avatar" src="img/icon/mr.svg" alt="头像" style="width: 30px; height: 30px; border-radius: 50%; margin-right: 10px;">
+                            <span id="login-status" style="margin-right: 10px; color: #666;">登录状态</span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" id="user-dropdown-menu-content">
+                            <li><a class="dropdown-item" href="#">个人中心</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="logout()">退出登录</a></li>
+                        </ul>
+                    </li>
+                    <!-- 登录按钮 -->
+                    <div id="login-button" style="display: flex; align-items: center; margin-right: 15px;">
+                        <button class="button-long" >登录注册</button>
                     </div>
                 </ul>
             </div>
         </div>
     </nav>
 </div>
-<-- 主体内容 -->
+<!-- 主体内容 -->
 <div class="main_content">
     <div class="container" style="text-align: center; padding: 20px;">
         <img src="img/icon/施工.svg" alt="施工图标" style="width: 150px; height: auto; margin-bottom: 20px;">

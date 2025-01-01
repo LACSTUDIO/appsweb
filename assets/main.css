@@ -8,9 +8,16 @@ body {
 
 .main_content {
     margin-top: 80px; /* 确保内容不被导航栏遮挡 */
+    transition: transform 0.3s ease;
+    margin-left: 0;
+    padding: 10px;
 }
 
-@media (max-width: 600px) {
+.main_content.open {
+    transform: translateX(250px);
+}
+
+@media (max-width: 998px) {
     .search-container_big {
         width: auto; /* 使输入框宽度充满卡片 */
         height: 40px; /* 固定输入框高度 */

@@ -3,7 +3,7 @@
 .yj, .container1, .container2, .software-card, .modal-content, .qr, .qr-content, .close {
     border-radius: 16px; 
 }
-.qd, .link-style, .close {
+.qd, .link-style, .close, .blue-bar {
     color: #00a0e9;
 }
 @media (max-width: 800px) {
@@ -21,7 +21,6 @@
 .blue-bar {
     width: 100%;
     height: 4px;
-    background-color: #00a0e9;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -58,8 +57,7 @@
     margin: 10% auto; 
     padding: 20px; 
     border: 1px solid #888; 
-    width: 50%; 
-    height: 60%;
+    width: 50%;
     height: auto;
     max-width: 450px;
     max-height: 500px;
@@ -68,27 +66,46 @@
 
 /* 二维码弹窗的样式 */
 .qr {
-    width: 100%;
+    width: 300px;
     height: 100%;
+
 }
+
 .qr-content {
-    margin: 15% auto; 
-    padding: 5px; 
-    border: 1px solid #888; 
-    width: 95%; 
-    height: 95%;
-    max-width: 200px; 
+    margin: 5px 0;
+    position: absolute; /* 改为absolute以更好地控制子元素的位置 */
+    top: 50%; /* 垂直居中 */
+    left: 50%; /* 水平居中 */
+    transform: translate(-50%, -50%); /* 平移以准确居中 */
+    padding: 5px;
+    border: 1px solid #888;
+    max-width: 300px;
+    max-height: 300px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background-color: white;
 }
+
+#qrCodeImage {
+    width: 100%; /* 图片宽度自适应其容器 */
+    height: auto; /* 图片高度根据宽度自适应 */
+    max-width: 280px; /* 设置图片的最大宽度 */
+    max-height: 280px; /* 设置图片的最大高度 */
+}
+
+
+
+
 
 /* 弹窗标题的样式 */
 .close {
+    margin: 5px;
     position: absolute; 
     width: 30px; 
     height: 30px; 
-    right: 10px; 
-    top: 10px; 
-    background: none; /* 背景透明 */
+    right: 5px;
+    top: 5px;
+    z-index: 10;
+    background: white; /* 背景透明 */
     border: none; /* 无边框 */
     cursor: pointer; /* 鼠标悬停时显示手型 */
     padding: 0; /* 去掉内边距 */
@@ -169,3 +186,42 @@
     color: #333; /* 标签字体颜色 */
     cursor: pointer; /* 鼠标悬浮为手形 */
 }
+.hidden {
+    display: none;
+}
+/* 灵动信息样式 */
+/* 定义一个简单的动画效果 */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* 定义一个背景颜色渐变动画效果 */
+@keyframes backgroundFade {
+    from { background-color: #00a0e9; }
+    to { background-color: #ffffff; } /* 可以根据需要调整颜色 */
+}
+
+/* 状态弹窗样式 */
+.status-modal {
+    position: fixed; /* 使弹窗固定在页面顶部 */
+    top: 10px; /* 距离顶部10px */
+    left: 50%;
+    transform: translateX(-50%); /* 使弹窗水平居中 */
+    width: 50%; /* 调整宽度为屏幕宽度的50% */
+    max-height: 60px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    z-index: 1000; /* 确保弹窗在最上层 */
+    display: none; /* 默认隐藏 */
+    animation: fadeIn 0.5s ease-in-out, backgroundFade 3s infinite alternate; /* 添加动画效果 */
+}
+
+.status-modal-content {
+    padding: 10px; /* 增加内边距 */
+    text-align: center;
+    color: #333; /* 调整字体颜色 */
+}
+

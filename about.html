@@ -16,9 +16,9 @@
 <body>
 <!-- 顶部导航栏 -->
 <div>
-    <nav class="navbar navbar-expand-lg" style="position: fixed; top: 0; width: 100%; z-index: 1000;">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="position: fixed; top: 0; height: 70px; width: 100%; z-index: 1000;">
+        <div class="container-fluid" >
+            <button id="toggle-menu" class="navbar-toggler" type="button" onclick="toggleMenu()">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div id="logo" class="navbar-logo">
@@ -30,10 +30,10 @@
                     <option value="dark">深色</option>
                 </select>
             </div>
-
-
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+            <!-- 手机界面侧边菜单 -->
+            <div class="side-menu" id="sideMenu">
+                <div class="close-btn" onclick="toggleMenu()">×</div>
+                <ul>
                     <li class="nav-item"><a class="nav-link" href="index.html">主页</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">关于</a></li>
                     <li class="nav-item dropdown">
@@ -59,15 +59,69 @@
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="404.html">最新</a></li>
-                    <li class="nav-item">
-                        <div style="display: flex; align-items: center;">
-                            <img id="avatar" src="img/icon/mr.svg" alt="头像" style="width: 30px; height: 30px; border-radius: 50%; margin-right: 10px; display: none;">
-                            <span id="login-status" class="nav-item" style="margin-right: 10px; color: #666;"></span>
-                        </div>
+
+                    <li class="nav-item dropdown" id="user-info-phone" style="display: flex; align-items: center;">
+                        <!-- 用户头像 -->
+                        <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink-phone" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img id="avatar-phone" src="img/icon/mr.svg" alt="头像" style="width: 30px; height: 30px; border-radius: 50%; margin-right: 10px;">
+                            <span id="login-status-phone" style="margin-right: 10px; color: #666;">登录状态</span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink-phone" id="user-dropdown-menu-content-phone">
+                            <li><a class="dropdown-item" href="#">个人中心</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="logout()">退出登录</a></li>
+                        </ul>
                     </li>
-                    <div class="nav-item" style="display: flex; align-items: center; margin-right: 15px; ">
-                        <button id="login-button" class="button-long">登录账号</button>
-                        <button id="setting-button" class="button-long">网站设置</button>
+                    <!-- 登录按钮 -->
+                    <div id="login-button-phone" style="display: flex; align-items: center; margin-right: 15px;">
+                        <button class="button-long" >登录注册</button>
+                    </div>
+
+                </ul>
+            </div>
+            <!--  PC 端导航栏 -->
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mb-2 mb-lg-0 ms-auto" >
+                    <li class="nav-item"><a class="nav-link" href="index.html">主页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">关于</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">PC</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a class="dropdown-item" href="404.html">系统相关</a></li>
+                            <li><a class="dropdown-item" href="404.html">编程调试</a></li>
+                            <li><a class="dropdown-item" href="#">上传下载</a></li>
+                            <li><a class="dropdown-item" href="#">办公学习</a></li>
+                            <li><a class="dropdown-item" href="#">视频音频</a></li>
+                            <li><a class="dropdown-item" href="#">安全防护</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">安卓</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <li><a class="dropdown-item" href="404.html">系统相关</a></li>
+                            <li><a class="dropdown-item" href="404.html">编程调试</a></li>
+                            <li><a class="dropdown-item" href="#">上传下载</a></li>
+                            <li><a class="dropdown-item" href="#">办公学习</a></li>
+                            <li><a class="dropdown-item" href="#">视频音频</a></li>
+                            <li><a class="dropdown-item" href="#">安全防护</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="404.html">最新</a></li>
+                    <!-- TODO: 需要优化账号登录方式  -->
+                    <!-- 用户下拉菜单 -->
+                    <li class="nav-item dropdown" id="user-info" style="display: flex; align-items: center;">
+                        <!-- 用户头像 -->
+                        <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img id="avatar" src="img/icon/mr.svg" alt="头像" style="width: 30px; height: 30px; border-radius: 50%; margin-right: 10px;">
+                            <span id="login-status" style="margin-right: 10px; color: #666;">登录状态</span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" id="user-dropdown-menu-content">
+                            <li><a class="dropdown-item" href="#">个人中心</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="logout()">退出登录</a></li>
+                        </ul>
+                    </li>
+                    <!-- 登录按钮 -->
+                    <div id="login-button" style="display: flex; align-items: center; margin-right: 15px;">
+                        <button class="button-long" >登录注册</button>
                     </div>
                 </ul>
             </div>
@@ -77,26 +131,29 @@
 
 <!-- 主体内容 -->
 <div class="main_content">
-    <div class="container">
+    <div class="container" style="text-align: center;">
         <h2 class="title">基础信息</h2>
+        <p style="color: #00a0e9;">强调色: #00a0e9</p>
         <p id="time"></p>
-        <p id="version">网站版本号:V2</p>
+        <p id="version">网站版本号:V2.1.0</p>
         <p id="update_time">最新更新时间:</p>
+        <hr>
         <p id="ip"></p>
         <p id="os_version"></p>
         <p id="displayMode"></p>
+        <p id="width">屏幕宽度:</p>
     </div>
 </div>
 <section class="container">
     <div class="row">
         <!--媒体平台卡片-->
         <div class="col-md-6">
-            <div class="container" style="margin: 10px 0;">
+            <div class="container" style="margin: 10px 0; text-align: center;">
                 <h3 class="title">媒体平台</h3>
                 <p>
                     哔哩哔哩: 
                     <a href="https://space.bilibili.com/1779662818" class="link-style" target="_blank">领创工作室</a>
-                    <img src="img/icon/qr.svg" alt="二维码" class="icon" style="cursor: pointer;" onclick="openQRCode('bilibili')">
+                    <img src="img/icon/qr.svg" alt="二维码" class="icon" style="cursor: pointer;" onclick="openQRCode('blibli')">
                 </p>
                 <p>
                     酷安社区: 
@@ -112,12 +169,11 @@
         </div>
         <!-- 联系方式卡片 -->
         <div class="col-md-6">
-            <div class="container" style="margin: 10px 0;">
+            <div class="container" style="margin: 10px 0; text-align: center;">
                 <h3 class="title">联系方式</h3>
                 <p>
                     邮箱: 
                     <a href="mailto:2935278133@qq.com" class="link-style">2935278133@qq.com</a>
-                    <img src="img/icon/qr.svg" alt="二维码" class="icon" style="cursor: pointer;" onclick="openQRCode('email')">
                 </p>
                 <p>
                     微信: 
@@ -150,8 +206,8 @@
         <div class="col-md-6">
         <div class="container" style="margin: 10px 0;">
             <h2 class="title">关于本站</h2>
-            <h4 class="title" >本站为记录个人学习web开发为出发点而建立的网站</h4>
             <ul>
+                <li>本站为记录个人学习web开发为出发点而建立的网站</li>
                 <li>本站主要分享一些软件资源，包括系统软件、办公软件、编程软件、视频音频软件等</li>
                 <li>本站提供软件下载、软件推荐和软件评论等功能</li>
                 <li>本站不提供任何形式的广告，所有广告均来自第三方平台</li>
@@ -255,15 +311,14 @@
         <div style="text-align: center;">
             <div style="display: flex; align-items: center; gap: 10px;">
                 <span>网站名称：</span>
-                <button onclick="document.getElementById('avatarInput').click();" class="button-long"/>
-
+                <input type="text" id="websiteNameInput" title="请输入网站名称" placeholder="网站名称" required>
             </div>
         </div>
     </div>
 </div>
 <!-- 二维码弹窗 -->
 <div id="qrModal" class="modal">
-    <div class="modal-content">
+    <div class="qr-content">
         <button class="close" onclick="closeQRCode()">
             <img src="img/icon/close.svg" alt="关闭" class="close-icon">
         </button>
@@ -280,7 +335,7 @@
     // 网站显示模式
     function updateDisplayMode() {
         const displayMode = document.getElementById('displayMode');
-        displayMode.innerText = window.innerWidth > 768 ? '网站显示模式: 电脑模式' : '网站显示模式: 手机模式';
+        displayMode.innerText = window.innerWidth > 998 ? '网站显示模式: 电脑模式' : '网站显示模式: 手机模式';
     }
 
     // 页面加载时和窗口大小调整时更新显示模式
@@ -333,8 +388,6 @@
         document.getElementById('time').innerText = `网站运行时间: ${timeStr}`;
     }
 
-    // 每秒更新一次
-    setInterval(updateTime, 1000);
 
     // 获取用户IP地址
     const UNABLE_TO_GET_IP = "无法获取IP地址";
@@ -372,7 +425,10 @@
     document.addEventListener("DOMContentLoaded", displayIP);
 
 
-    // 页面加载时执行显示IP地址的函数
+
+
+
+    // 获取网站更新时间
     fetch('https://api.github.com/repos/LACSTUDIO/appsweb')
         .then(response => response.json())
         .then(data => {
@@ -381,6 +437,19 @@
             document.getElementById('update_time').textContent += ' ' + formattedTime;
         })
         .catch(error => console.error('Error:', error));
+
+
+    // 获取屏幕宽度并显示
+    function updateScreenWidth() {
+        const screenWidth = window.innerWidth;
+        document.getElementById('width').innerText = '屏幕宽度: ' + screenWidth + 'px';
+    }
+
+    // 页面加载时更新屏幕宽度
+    updateScreenWidth();
+
+    // 添加窗口大小调整事件监听器
+    window.addEventListener('resize', updateScreenWidth);
 </script>
 </body>
 

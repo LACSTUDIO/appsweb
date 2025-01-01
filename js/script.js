@@ -89,47 +89,34 @@ let autoSlideInterval;
     }
 
 
-// 显示/关闭免责声明
-function toggleDisclaimer(show) {
-    document.getElementById('disclaimer-modal').style.display = show ? 'flex' : 'none';
+// 显示免责声明弹窗
+function showDisclaimer() {
+    const modal = document.getElementById('disclaimer-modal');
+    modal.style.display = 'block';
 }
 
-// 获取弹窗元素和按钮
-const modal = document.getElementById("settings-modal");
-const settingButton = document.getElementById("setting-button");
-const closeButton = document.getElementById("close_btn");
+// 关闭免责声明弹窗
+function closeDisclaimer() {
+    const modal = document.getElementById('disclaimer-modal');
+    modal.style.display = 'none';
+}
 
-// 获取免责声明按钮
-const disclaimerButton = document.getElementById("disclaimer-button");
-
-// 打开和关闭弹窗
-settingButton.onclick = () => modal.style.display = "block";
-closeButton.onclick = () => modal.style.display = "none";
-
-// 显示免责声明
-disclaimerButton.onclick = () => toggleDisclaimer(true);
-
-// 假设还有一个关闭免责声明的按钮
-const closeDisclaimerButton = document.getElementById("close-disclaimer-btn");
-closeDisclaimerButton.onclick = () => toggleDisclaimer(false);
-
-
-// 点击弹窗外关闭弹窗
-window.onclick = event => {
-    if (event.target === modal || event.target === document.getElementById('qrModal')) {
-        modal.style.display = "none";
-        closeQRCode();
+// 点击弹窗外部区域时关闭弹窗
+window.onclick = function(event) {
+    const modal = document.getElementById('disclaimer-modal');
+    if (event.target === modal) {
+        modal.style.display = 'none';
     }
 }
+
 
 
 // 二维码弹窗
 function openQRCode(type) {
     const qrCodeUrlMap = {
-        'bilibili': 'path/to/bilibili_qr.png',
-        'coolapk': 'path/to/coolapk_qr.png',
-        'xiaomi': 'path/to/xiaomi_qr.png',
-        'email': 'path/to/email_qr.png',
+        'blibli': 'img/qr/blibli.png',
+        'coolapk': 'img/qr/coolapk.png',
+        'xiaomi': 'img/qr/xiaomi.png',
         'wechat': 'img/qr/wechat.png',
         'public_account': 'img/qr/公众号.png'
     };
@@ -169,4 +156,40 @@ window.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme') || 'light';
     toggleTheme(savedTheme);
+});
+
+
+// 控制侧边栏菜单的显示与隐藏
+function toggleMenu() {
+    const sideMenu = document.getElementById('sideMenu');
+    const mainContent = document.getElementById('mainContent');
+
+    // 如果侧边栏已经展开，隐藏它；否则，显示它
+    if (sideMenu.style.left === '0px') {
+        sideMenu.style.left = '-250px';  // 隐藏侧边栏
+        mainContent.style.marginLeft = '0';  // 恢复主内容
+    } else {
+        sideMenu.style.left = '0';  // 显示侧边栏
+        mainContent.style.marginLeft = '250px';  // 主内容向右偏移，避免被菜单遮挡
+    }
+}
+
+// 灵动信息弹窗
+function showStatusModal(message) {
+    document.getElementById('status-message').innerText = message;
+    document.getElementById('status-modal').style.display = 'block';
+    setTimeout(closeStatusModal, 2000); // 2秒后自动关闭弹窗
+}
+// 关闭灵动信息弹窗
+function closeStatusModal() {
+    document.getElementById('status-modal').style.display = 'none';
+}
+
+
+document.getElementById('toggle-menu').addEventListener('click', function() {
+    var sideMenu = document.getElementById('side-menu');
+    var content = document.getElementById('main_content');
+
+    sideMenu.classList.toggle('open');
+    content.classList.toggle('open');
 });
