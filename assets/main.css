@@ -207,6 +207,25 @@ p {
 .button:hover, .big_button:hover {
     background-color: #0056b3;
 }
+.button-mini {
+    width: 60px;
+    height: 40px;
+    margin: 15px;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 8px;
+    background-color: white;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.button-mini:hover {
+    border: 2px solid #00a0e9;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 按钮阴影 */
+}
 
 /* 搜索框样式 */
 .search-container {

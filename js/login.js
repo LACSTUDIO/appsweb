@@ -63,10 +63,11 @@ function updateLoginStatus(isLoggedIn, username = '', avatarUrl = 'img/icon/mr.s
     }
 }
 
-// 初始化时加载登录状态
 document.addEventListener('DOMContentLoaded', function () {
     const username = localStorage.getItem('username') || '';
     const avatarUrl = localStorage.getItem('avatarUrl') || 'img/icon/mr.svg';
+    console.log('Username from localStorage:', username);
+    console.log('AvatarUrl from localStorage:', avatarUrl);
     updateLoginStatus(!!username, username, avatarUrl);
 
     // 登录按钮点击事件，未登录时跳转到登录页面
@@ -74,6 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (button) {
             button.addEventListener('click', function () {
                 const isLoggedIn = !!localStorage.getItem('username');
+                console.log('Is logged in:', isLoggedIn);
                 if (isLoggedIn) {
                     toggleDropdownMenu(key); // 已登录，显示下拉菜单
                 } else {
@@ -100,6 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 });
+
 
 // 显示/隐藏下拉菜单
 function toggleDropdownMenu(device) {
