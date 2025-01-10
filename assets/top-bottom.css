@@ -139,9 +139,14 @@
     height: 50px;
     background-color: white;
     border-radius: 10px;
-    padding: 10px;
+    padding: 5px;
 }
-
+.navbar-brand {
+    margin-top: 5px;
+    padding: 5px;
+    font-size: 24px;
+    color: #000;
+}
 /* 大屏设备：显示顶部菜单并隐藏展开按钮 */
 @media (min-width: 999px) {
     .side-menu {
