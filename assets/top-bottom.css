@@ -235,6 +235,14 @@
         cursor: pointer;
         margin-bottom: 10px;
     }
-
-
+    .navbar-logo {
+        height: 50px;
+        background-color: white;
+        border-radius: 10px;
+        padding: 5px;
+        max-width: 60%;
+    }
+    .theme-selector {
+        display: none;
+    }
 }
