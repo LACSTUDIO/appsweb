@@ -192,3 +192,8 @@ document.getElementById('toggle-menu').addEventListener('click', function() {
     sideMenu.classList.toggle('open');
     content.classList.toggle('open');
 });
+
+function showAccMgmt() {
+    document.getElementById('account-modal').style.display = 'block';
+    document.getElementById('acc-mgmt-btn').style.display = 'none';
+}
